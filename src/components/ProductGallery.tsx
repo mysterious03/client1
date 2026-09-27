@@ -50,7 +50,7 @@ export const ProductGallery: React.FC = () => {
         <div className="mb-20">
           <DepthCarousel
             items={carouselItems}
-            tint="#EFEDE7"
+            tint="#E8ECF8"
             depth={160}
             spread={60}
             tilt={12}
@@ -67,7 +67,7 @@ export const ProductGallery: React.FC = () => {
         </div>
 
         {/* 2. Bento Grid: Explore the Full Catalog */}
-        <div className="bg-bg-muted/70 p-6 sm:p-8 lg:p-10 rounded-2xl border border-border">
+        <div className="bg-[#E8ECF8]/60 p-6 sm:p-8 lg:p-10 rounded-2xl border border-border">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
             <div>
               <span className="text-xs font-mono font-semibold uppercase tracking-wider text-accent">
@@ -90,10 +90,10 @@ export const ProductGallery: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {/* Large Bento Tile: spans 2 cols on lg */}
-            <div className="lg:col-span-2 lg:row-span-2 bg-bg-surface rounded-2xl border border-border p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.01] hover:border-accent group shadow-sm">
+            <div className="lg:col-span-2 lg:row-span-2 bg-white rounded-2xl border border-border p-6 sm:p-8 flex flex-col justify-between transition-all duration-300 hover:border-accent hover:shadow-xl hover:shadow-[#7B2CF9]/10 group shadow-sm">
               <div>
                 <div className="flex items-center justify-between gap-4 mb-6">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-2.5 py-1 rounded bg-bg-muted text-text-secondary border border-border">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-mono font-medium px-2.5 py-1 rounded bg-[#E8ECF8] text-text-primary border border-thistle/70">
                     <Layers className="w-3.5 h-3.5 text-accent" /> Complete Industrial Portfolio
                   </span>
                   <span className="text-xs font-mono text-text-secondary">
@@ -110,15 +110,15 @@ export const ProductGallery: React.FC = () => {
 
                 {/* Micro engineering spec badges */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 my-6">
-                  <div className="p-3 bg-bg-base rounded-xl border border-border">
+                  <div className="p-3 bg-[#FBFCFF] rounded-xl border border-border">
                     <span className="block text-xs text-text-secondary">Max Pressure</span>
                     <span className="font-mono text-sm font-semibold text-text-primary">350 Bar</span>
                   </div>
-                  <div className="p-3 bg-bg-base rounded-xl border border-border">
+                  <div className="p-3 bg-[#FBFCFF] rounded-xl border border-border">
                     <span className="block text-xs text-text-secondary">Press Capacity</span>
                     <span className="font-mono text-sm font-semibold text-text-primary">500 Tons</span>
                   </div>
-                  <div className="p-3 bg-bg-base rounded-xl border border-border col-span-2 sm:col-span-1">
+                  <div className="p-3 bg-[#FBFCFF] rounded-xl border border-border col-span-2 sm:col-span-1">
                     <span className="block text-xs text-text-secondary">Warranty</span>
                     <span className="font-mono text-sm font-semibold text-text-primary">12 Mo Base</span>
                   </div>
@@ -132,7 +132,7 @@ export const ProductGallery: React.FC = () => {
                 </div>
                 <Link
                   to="/products"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-text-primary text-bg-base font-semibold text-sm hover:bg-accent transition-colors shadow-sm"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#7B2CF9] to-[#651AE6] text-white font-semibold text-sm hover:shadow-md hover:shadow-[#7B2CF9]/30 transition-all shadow-sm"
                 >
                   View Full Catalog <ArrowRight className="w-4 h-4" />
                 </Link>

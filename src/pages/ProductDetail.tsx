@@ -1,7 +1,8 @@
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ShieldCheck, CheckCircle2, Phone, ArrowUpRight } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, Phone, ArrowUpRight, Calculator } from 'lucide-react';
 import { PRODUCTS, CATEGORIES, COMPANY_INFO } from '../data/catalog';
 import { InquiryForm } from '../components/InquiryForm';
+import { SchematicViewer } from '../components/SchematicViewer';
 
 export const ProductDetail = () => {
   const { categorySlug, productSlug } = useParams<{
@@ -41,20 +42,13 @@ export const ProductDetail = () => {
         {/* Product Overview Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start mb-16">
           
-          {/* Left Column: Product Image (5 cols) */}
+          {/* Left Column: Interactive Product Schematic & CAD Viewer (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
-            <div className="rounded-2xl bg-bg-surface border border-border p-3 shadow-sm">
-              <div className="aspect-[4/3] rounded-xl overflow-hidden bg-bg-muted relative">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-3 left-3 bg-[#1B1C1F]/80 backdrop-blur-md text-white text-[11px] font-mono px-2.5 py-1 rounded">
-                  {category.shortName}
-                </div>
-              </div>
-            </div>
+            <SchematicViewer
+              imageSrc={product.image}
+              title={product.name}
+              seriesCode={`${product.modelName || 'Series Spec'} • ${product.operatingPressure || product.liftingCapacity || 'Proof 350 Bar'}`}
+            />
 
             {/* Quality assurance guarantee card */}
             <div className="p-4 rounded-xl bg-bg-surface border border-border space-y-2 text-xs text-text-secondary">
@@ -176,19 +170,26 @@ export const ProductDetail = () => {
             )}
 
             {/* Quick Action Button to scroll to RFQ */}
-            <div className="pt-4 flex items-center gap-4">
+            <div className="pt-4 flex flex-wrap items-center gap-3">
               <a
                 href="#rfq"
                 className="px-6 py-3 rounded-lg bg-text-primary text-bg-base font-semibold text-sm hover:bg-accent transition-colors shadow-sm inline-flex items-center gap-2"
               >
                 Request Quotation for {product.name} <ArrowUpRight className="w-4 h-4" />
               </a>
+              <Link
+                to="/#calculator"
+                className="px-4 py-3 rounded-lg border border-border bg-bg-surface text-text-primary font-semibold text-sm hover:border-accent transition-colors inline-flex items-center gap-2"
+              >
+                <Calculator className="w-4 h-4 text-accent" />
+                Size in Calculator
+              </Link>
               <a
                 href={`tel:${COMPANY_INFO.contact.phone}`}
-                className="px-5 py-3 rounded-lg border border-border bg-bg-surface text-text-primary font-semibold text-sm hover:border-accent transition-colors inline-flex items-center gap-2"
+                className="px-4 py-3 rounded-lg border border-border bg-bg-surface text-text-primary font-semibold text-sm hover:border-accent transition-colors inline-flex items-center gap-2"
               >
                 <Phone className="w-4 h-4 text-accent" />
-                Speak to Engineer
+                Call Engineer
               </a>
             </div>
 

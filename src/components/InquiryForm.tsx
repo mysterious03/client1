@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { submitInquiry } from '../lib/supabase';
@@ -23,6 +23,19 @@ export const InquiryForm: React.FC<InquiryFormProps> = ({
     capacityRequirement: '',
     message: '',
   });
+
+  useEffect(() => {
+    const prefill = sessionStorage.getItem('dhanasree_rfq_prefill');
+    if (prefill) {
+      setFormData((prev) => ({
+        ...prev,
+        message: prev.message
+          ? `${prev.message}\n\n[Engineering Spec Attached]: ${prefill}`
+          : `[Engineering Spec Attached]: ${prefill}`,
+      }));
+      sessionStorage.removeItem('dhanasree_rfq_prefill');
+    }
+  }, []);
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);

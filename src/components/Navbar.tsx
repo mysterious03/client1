@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ArrowUpRight, Phone, FileDown, ChevronDown } from 'lucide-react';
-import { CATEGORIES, COMPANY_INFO } from '../data/catalog';
+import { Menu, X, Search, ArrowUpRight, ChevronDown } from 'lucide-react';
+import { CATEGORIES } from '../data/catalog';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenSearch?: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenSearch }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close menus on route change
   useEffect(() => {
@@ -24,244 +19,225 @@ export const Navbar: React.FC = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
     { name: 'Products', path: '/products', hasDropdown: true },
+    { name: 'Technology', path: '/technology' },
     { name: 'About Us', path: '/about' },
     { name: 'Clients', path: '/clients' },
-    { name: 'Contact', path: '/contact' },
   ];
 
   return (
-    <>
-      {/* Top Engineering & Contact Notification Strip */}
-      <div className="bg-bg-muted border-b border-border text-xs text-text-secondary py-1.5 px-4 hidden md:block">
-        <div className="max-w-content mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <span className="font-mono text-[11px] text-text-primary flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-success"></span>
-              Manufacturing Units: Padi &amp; Melayanambakkam, Chennai
+    <header className="sticky top-0 z-50 py-3 px-4 sm:px-6 max-w-7xl mx-auto w-full transition-all duration-300">
+      <nav className="flex items-center justify-between border border-[#D5DCF0] bg-white/95 backdrop-blur-md shadow-lg shadow-[#1F2D5B]/5 px-5 sm:px-6 py-3 rounded-full text-text-primary text-sm relative">
+        
+        {/* Brand Logo & Geometric Nodes Emblem */}
+        <Link to="/" className="flex items-center gap-3 group shrink-0">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#7B2CF9] to-[#1F2D5B] flex items-center justify-center p-1.5 shadow-sm group-hover:scale-105 transition-transform">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="4.706" cy="16" r="4.706" fill="#D8BFD8" />
+              <circle cx="16.001" cy="4.706" r="4.706" fill="#FFFFFF" />
+              <circle cx="16.001" cy="27.294" r="4.706" fill="#FFFFFF" />
+              <circle cx="27.294" cy="16" r="4.706" fill="#D8BFD8" />
+            </svg>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-display font-black text-sm tracking-tight text-[#1F2D5B] group-hover:text-accent transition-colors leading-none">
+              DHANASREE
             </span>
-            <span className="text-[#8A6A38] font-medium">
-              ISO Precision Standards • Up to 350 Bar Systems
+            <span className="text-[9px] font-mono tracking-widest text-text-secondary uppercase">
+              Hydraulics
             </span>
           </div>
-          <div className="flex items-center gap-5">
-            <a
-              href={`tel:${COMPANY_INFO.contact.phone}`}
-              className="flex items-center gap-1.5 text-text-primary hover:text-accent font-mono font-medium transition-colors"
-            >
-              <Phone className="w-3 h-3 text-accent" />
-              {COMPANY_INFO.contact.displayPhone}
-            </a>
-            <span className="text-border">|</span>
-            <a
-              href="/catalog-dhanasree-hydraulics.pdf"
-              download
-              className="flex items-center gap-1 hover:text-accent transition-colors"
-            >
-              <FileDown className="w-3 h-3 text-accent" />
-              <span>Catalog PDF</span>
-            </a>
-          </div>
-        </div>
-      </div>
+        </Link>
 
-      {/* Main Corporate Navigation */}
-      <header
-        className={`sticky top-0 z-50 transition-all duration-200 ${
-          isScrolled
-            ? 'bg-bg-surface/95 backdrop-blur-md border-b border-border shadow-sm'
-            : 'bg-bg-base/95 backdrop-blur-md border-b border-border/80'
-        }`}
-      >
-        <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            
-            {/* Brand Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
-              {/* Emblem */}
-              <div className="w-10 h-10 rounded-lg bg-text-primary flex items-center justify-center text-bg-base font-display font-bold text-xl tracking-tight group-hover:bg-accent transition-colors shadow-sm">
-                DH
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-lg text-text-primary tracking-tight leading-tight">
-                  Dhanasree Hydraulics
-                </span>
-                <span className="text-[10px] uppercase font-mono tracking-widest text-text-secondary">
-                  &amp; Equipments • Chennai
-                </span>
-              </div>
-            </Link>
+        {/* Sliding Text Navigation Links (Animated Hover Effect) */}
+        <div className="hidden lg:flex items-center gap-7 ml-8">
+          {navLinks.map((link) => {
+            const isActive = location.pathname.startsWith(link.path);
 
-            {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1">
-              {navLinks.map((link) => {
-                const isActive =
-                  link.path === '/'
-                    ? location.pathname === '/'
-                    : location.pathname.startsWith(link.path);
-
-                if (link.hasDropdown) {
-                  return (
-                    <div
-                      key={link.name}
-                      className="relative"
-                      onMouseEnter={() => setProductsOpen(true)}
-                      onMouseLeave={() => setProductsOpen(false)}
-                    >
-                      <Link
-                        to={link.path}
-                        className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors inline-flex items-center gap-1 ${
-                          isActive
-                            ? 'text-accent font-semibold'
-                            : 'text-text-secondary hover:text-text-primary hover:bg-bg-muted/60'
-                        }`}
-                      >
-                        {link.name}
-                        <ChevronDown className="w-3.5 h-3.5" />
-                      </Link>
-
-                      {/* Dropdown for Categories */}
-                      {productsOpen && (
-                        <div className="absolute top-full left-0 w-80 bg-bg-surface rounded-xl border border-border shadow-xl p-3 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
-                          <div className="px-3 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-wider text-text-secondary border-b border-border/80 mb-2">
-                            Product Divisions
-                          </div>
-                          <div className="space-y-1">
-                            {CATEGORIES.map((cat) => (
-                              <Link
-                                key={cat.id}
-                                to={`/products/${cat.slug}`}
-                                className="block px-3 py-2 rounded-lg text-xs font-medium text-text-primary hover:bg-bg-muted hover:text-accent transition-colors"
-                              >
-                                <div className="font-display font-medium text-sm">
-                                  {cat.shortName}
-                                </div>
-                                <div className="text-[11px] text-text-secondary truncate mt-0.5">
-                                  {cat.description}
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
-                          <div className="mt-2 pt-2 border-t border-border px-3 py-1 flex items-center justify-between text-xs">
-                            <Link
-                              to="/products"
-                              className="font-semibold text-accent hover:text-accent-hover inline-flex items-center gap-1"
-                            >
-                              All 8 Categories <ArrowUpRight className="w-3 h-3" />
-                            </Link>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                }
-
-                return (
+            if (link.hasDropdown) {
+              return (
+                <div
+                  key={link.name}
+                  className="relative"
+                  onMouseEnter={() => setProductsOpen(true)}
+                  onMouseLeave={() => setProductsOpen(false)}
+                >
                   <Link
-                    key={link.name}
                     to={link.path}
-                    className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive
-                        ? 'text-accent font-semibold'
-                        : 'text-text-secondary hover:text-text-primary hover:bg-bg-muted/60'
+                    className={`relative overflow-hidden h-6 group inline-flex items-center gap-1 font-medium ${
+                      isActive ? 'text-accent font-semibold' : 'text-text-primary'
                     }`}
                   >
-                    {link.name}
+                    <div className="relative overflow-hidden h-5">
+                      <span className="block group-hover:-translate-y-full transition-transform duration-300">
+                        {link.name}
+                      </span>
+                      <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 text-accent font-semibold">
+                        {link.name}
+                      </span>
+                    </div>
+                    <ChevronDown className="w-3.5 h-3.5 text-text-secondary group-hover:text-accent transition-colors" />
                   </Link>
-                );
-              })}
-            </nav>
 
-            {/* Desktop Action Buttons */}
-            <div className="hidden lg:flex items-center gap-3">
-              <a
-                href={`tel:${COMPANY_INFO.contact.phone}`}
-                className="px-3.5 py-2 text-xs font-mono font-semibold text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1.5"
-              >
-                <Phone className="w-3.5 h-3.5 text-accent" />
-                <span>Call Plant</span>
-              </a>
+                  {/* Dropdown for Product Divisions */}
+                  {productsOpen && (
+                    <div className="absolute top-full left-0 -ml-4 mt-2 w-72 bg-white rounded-2xl border border-[#D5DCF0] shadow-2xl p-3 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                      <div className="px-3 py-1.5 text-[10px] font-mono font-bold uppercase tracking-wider text-text-secondary border-b border-[#D5DCF0] mb-2">
+                        Product Divisions
+                      </div>
+                      <div className="space-y-1">
+                        {CATEGORIES.slice(0, 5).map((cat) => (
+                          <Link
+                            key={cat.id}
+                            to={`/products/${cat.slug}`}
+                            className="block px-3 py-2 rounded-xl text-xs font-medium text-text-primary hover:bg-[#E8ECF8] hover:text-accent transition-colors"
+                          >
+                            <div className="font-display font-semibold text-xs">
+                              {cat.shortName}
+                            </div>
+                            <div className="text-[10px] text-text-secondary truncate mt-0.5">
+                              {cat.description}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="mt-2 pt-2 border-t border-[#D5DCF0] px-3 py-1 flex items-center justify-between">
+                        <Link
+                          to="/products"
+                          className="font-bold text-accent hover:text-[#651AE6] text-xs inline-flex items-center gap-1"
+                        >
+                          All 8 Categories <ArrowUpRight className="w-3 h-3" />
+                        </Link>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
+            return (
               <Link
-                to="/contact"
-                className="px-5 py-2.5 rounded-lg bg-accent hover:bg-accent-hover text-white text-sm font-semibold tracking-wide transition-colors shadow-sm inline-flex items-center gap-1.5"
+                key={link.name}
+                to={link.path}
+                className={`relative overflow-hidden h-5 group font-medium ${
+                  isActive ? 'text-accent font-semibold' : 'text-text-primary'
+                }`}
               >
-                Request Quote
-                <ArrowUpRight className="w-4 h-4" />
+                <span className="block group-hover:-translate-y-full transition-transform duration-300">
+                  {link.name}
+                </span>
+                <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300 text-accent font-semibold">
+                  {link.name}
+                </span>
               </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <div className="flex lg:hidden items-center gap-2">
-              <Link
-                to="/contact"
-                className="px-3 py-1.5 rounded-md bg-accent text-white text-xs font-semibold mr-1"
-              >
-                RFQ
-              </Link>
-              <button
-                type="button"
-                onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-lg text-text-primary hover:bg-bg-muted transition-colors"
-                aria-label="Toggle Navigation Menu"
-              >
-                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-
-          </div>
+            );
+          })}
         </div>
 
-        {/* Mobile Dropdown Menu */}
-        {isOpen && (
-          <div className="lg:hidden bg-bg-surface border-b border-border px-4 pt-2 pb-6 space-y-3">
-            <div className="space-y-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className="block px-3 py-2.5 rounded-lg text-base font-medium text-text-primary hover:bg-bg-muted"
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
+        {/* Action Buttons on the Right */}
+        <div className="hidden md:flex items-center gap-3">
+          {/* Quick Search Trigger */}
+          {onOpenSearch && (
+            <button
+              type="button"
+              onClick={onOpenSearch}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#E8ECF8]/70 hover:bg-[#E8ECF8] border border-[#D5DCF0] text-xs text-text-secondary hover:text-text-primary transition-all cursor-pointer group"
+              title="Search (⌘K)"
+            >
+              <Search className="w-3.5 h-3.5 text-accent group-hover:scale-110 transition-transform" />
+              <span className="font-mono text-xs hidden xl:inline">Search</span>
+              <kbd className="px-1.5 py-0.2 rounded bg-white border border-[#D5DCF0] font-mono text-[10px]">
+                ⌘K
+              </kbd>
+            </button>
+          )}
 
-            <div className="pt-3 border-t border-border">
-              <div className="text-xs font-mono uppercase tracking-wider text-text-secondary px-3 mb-2">
-                Product Categories
-              </div>
-              <div className="grid grid-cols-2 gap-1 px-1">
-                {CATEGORIES.map((cat) => (
-                  <Link
-                    key={cat.id}
-                    to={`/products/${cat.slug}`}
-                    className="px-2 py-1.5 text-xs text-text-secondary hover:text-accent rounded"
-                  >
-                    {cat.shortName}
-                  </Link>
-                ))}
-              </div>
-            </div>
+          {/* Contact Button */}
+          <Link
+            to="/contact"
+            className="border border-[#D5DCF0] hover:border-accent hover:bg-[#E8ECF8]/50 px-4 py-2 rounded-full text-xs font-semibold text-text-primary transition-colors"
+          >
+            Contact
+          </Link>
 
-            <div className="pt-4 border-t border-border flex flex-col gap-2">
-              <a
-                href={`tel:${COMPANY_INFO.contact.phone}`}
-                className="w-full py-2.5 rounded-lg bg-bg-muted text-text-primary font-mono text-center text-sm font-semibold flex items-center justify-center gap-2"
-              >
-                <Phone className="w-4 h-4 text-accent" />
-                Call Plant: {COMPANY_INFO.contact.phone}
-              </a>
-              <Link
-                to="/contact"
-                className="w-full py-2.5 rounded-lg bg-accent text-white text-center text-sm font-semibold"
-              >
-                Submit Technical RFQ
-              </Link>
-            </div>
+          {/* Glowing Get Started / Request Quote Button */}
+          <Link
+            to="/contact"
+            className="bg-gradient-to-r from-[#7B2CF9] to-[#651AE6] text-white hover:shadow-[0px_0px_25px_6px] shadow-[0px_0px_15px_3px] hover:shadow-[#7B2CF9]/50 shadow-[#7B2CF9]/30 px-5 py-2 rounded-full text-xs font-bold hover:scale-105 transition-all duration-300 inline-flex items-center gap-1.5"
+          >
+            <span>Request Quote</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
+        {/* Mobile Menu Toggle Button */}
+        <div className="flex md:hidden items-center gap-2">
+          {onOpenSearch && (
+            <button
+              type="button"
+              onClick={onOpenSearch}
+              className="p-1.5 rounded-full text-text-secondary hover:text-accent bg-[#E8ECF8]"
+              aria-label="Search"
+            >
+              <Search className="w-4 h-4 text-accent" />
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="p-1.5 text-text-primary hover:text-accent transition-colors"
+            aria-label="Toggle navigation menu"
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+      </nav>
+
+      {/* Mobile Drawer Menu */}
+      {isOpen && (
+        <div className="md:hidden mt-2 bg-white/95 backdrop-blur-md rounded-2xl border border-[#D5DCF0] shadow-2xl p-5 flex flex-col gap-4 animate-in fade-in slide-in-from-top-2 duration-200">
+          <Link
+            to="/products"
+            className="font-medium text-sm text-text-primary hover:text-accent transition-colors py-1"
+          >
+            Products
+          </Link>
+          <Link
+            to="/technology"
+            className="font-medium text-sm text-text-primary hover:text-accent transition-colors py-1"
+          >
+            Technology &amp; Testing Suite
+          </Link>
+          <Link
+            to="/about"
+            className="font-medium text-sm text-text-primary hover:text-accent transition-colors py-1"
+          >
+            About Us &amp; Facilities
+          </Link>
+          <Link
+            to="/clients"
+            className="font-medium text-sm text-text-primary hover:text-accent transition-colors py-1"
+          >
+            Verified Clients (19 MNCs)
+          </Link>
+
+          <div className="pt-3 border-t border-[#D5DCF0] flex flex-col gap-2">
+            <Link
+              to="/contact"
+              className="w-full text-center border border-[#D5DCF0] hover:bg-[#E8ECF8] py-2.5 rounded-full text-xs font-semibold text-text-primary transition-colors"
+            >
+              Contact Direct
+            </Link>
+            <Link
+              to="/contact"
+              className="w-full text-center bg-gradient-to-r from-[#7B2CF9] to-[#651AE6] text-white py-2.5 rounded-full text-xs font-bold shadow-md shadow-[#7B2CF9]/30"
+            >
+              Request Quote
+            </Link>
           </div>
-        )}
-      </header>
-    </>
+        </div>
+      )}
+    </header>
   );
 };
