@@ -12,6 +12,7 @@ import { Interactive3DCylinder } from '../components/Interactive3DCylinder';
 import { DepthCarousel } from '../components/DepthCarousel';
 import type { DepthCarouselItem } from '../components/DepthCarousel';
 import { HydraulicCalculator } from '../components/HydraulicCalculator';
+import { CinematicTextReveal } from '../components/CinematicTextReveal';
 import { PRODUCTS } from '../data/catalog';
 
 /* ──────────────────────────────────────────────
@@ -241,24 +242,31 @@ export const Home: React.FC = () => {
 
               {/* Main Title */}
               <div>
-                <motion.h1
-                  className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black text-[#1F2D5B] leading-[0.95] tracking-[-0.03em]"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                >
-                  Powering What{' '}
-                  <span className="bg-gradient-to-r from-[#7B2CF9] via-[#651AE6] to-[#7B2CF9] bg-clip-text text-transparent">
-                    Moves
-                  </span>{' '}
-                  The World.
-                </motion.h1>
+                <CinematicTextReveal
+                  as="h1"
+                  text="Powering What Moves The World."
+                  revealMode="words"
+                  textColor="#1F2D5B"
+                  lineHeight={0.95}
+                  letterSpacing={-0.03}
+                  direction="up"
+                  distance={44}
+                  blur={8}
+                  easing="cinematic"
+                  duration={0.85}
+                  stagger={0.07}
+                  delay={0.25}
+                  accentEnabled={true}
+                  accentText="Moves"
+                  accentGradientClass="bg-gradient-to-r from-[#7B2CF9] via-[#651AE6] to-[#7B2CF9] bg-clip-text text-transparent inline-block"
+                  className="font-display text-[clamp(2.8rem,6vw,5.5rem)] font-black"
+                />
 
                 <motion.p
                   className="mt-6 text-lg sm:text-xl text-[#4A5578] leading-relaxed max-w-lg font-light"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.5 }}
+                  transition={{ duration: 0.7, delay: 0.65 }}
                 >
                   Advanced hydraulic solutions engineered with micron-level tolerances for India's most demanding industrial plants.
                 </motion.p>
@@ -422,10 +430,23 @@ export const Home: React.FC = () => {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-[#1F2D5B] tracking-tight leading-[1.05]">
-                  Engineering Fluid{' '}
-                  <span className="text-[#7B2CF9]">Possibilities.</span>
-                </h2>
+                <CinematicTextReveal
+                  as="h2"
+                  text="Engineering Fluid Possibilities."
+                  revealMode="words"
+                  textColor="#1F2D5B"
+                  lineHeight={1.05}
+                  letterSpacing={-0.02}
+                  direction="up"
+                  distance={32}
+                  blur={6}
+                  easing="cinematic"
+                  duration={0.8}
+                  accentEnabled={true}
+                  accentText="Possibilities."
+                  accentColor="#7B2CF9"
+                  className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight"
+                />
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
@@ -476,9 +497,23 @@ export const Home: React.FC = () => {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
                 <span className="text-xs font-mono font-bold tracking-wider text-[#7B2CF9] uppercase">Our Products</span>
-                <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-[#1F2D5B] tracking-tight mt-2 leading-[1.05]">
-                  Built to Perform.
-                </h2>
+                <CinematicTextReveal
+                  as="h2"
+                  text="Built to Perform."
+                  revealMode="words"
+                  textColor="#1F2D5B"
+                  lineHeight={1.05}
+                  letterSpacing={-0.02}
+                  direction="up"
+                  distance={28}
+                  blur={6}
+                  easing="cinematic"
+                  duration={0.75}
+                  accentEnabled={true}
+                  accentText="Perform."
+                  accentColor="#7B2CF9"
+                  className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mt-2"
+                />
                 <p className="text-lg text-[#4A5578] mt-3 max-w-xl">
                   High-performance hydraulic cylinders, valves and power units for every industrial challenge.
                 </p>
@@ -715,10 +750,23 @@ export const Home: React.FC = () => {
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>
-                <h2 className="font-display text-4xl sm:text-5xl font-black text-[#1F2D5B] tracking-tight leading-[1.05]">
-                  It's More Than a Machine.{' '}
-                  <span className="text-[#7B2CF9]">It's a Promise.</span>
-                </h2>
+                <CinematicTextReveal
+                  as="h2"
+                  text="It's More Than a Machine. It's a Promise."
+                  revealMode="words"
+                  textColor="#1F2D5B"
+                  lineHeight={1.05}
+                  letterSpacing={-0.02}
+                  direction="up"
+                  distance={28}
+                  blur={6}
+                  easing="cinematic"
+                  duration={0.8}
+                  accentEnabled={true}
+                  accentText="Promise."
+                  accentColor="#7B2CF9"
+                  className="font-display text-4xl sm:text-5xl font-black tracking-tight"
+                />
               </ScrollReveal>
 
               <ScrollReveal delay={0.3}>
@@ -813,10 +861,23 @@ export const Home: React.FC = () => {
               </ScrollReveal>
 
               <ScrollReveal delay={0.1}>
-                <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.05]">
-                  Ready to Power Your{' '}
-                  <span className="bg-gradient-to-r from-white via-[#D8BFD8] to-white bg-clip-text text-transparent">Next Move?</span>
-                </h2>
+                <CinematicTextReveal
+                  as="h2"
+                  text="Ready to Power Your Next Move?"
+                  revealMode="words"
+                  textColor="#FFFFFF"
+                  lineHeight={1.05}
+                  letterSpacing={-0.02}
+                  direction="up"
+                  distance={32}
+                  blur={6}
+                  easing="cinematic"
+                  duration={0.85}
+                  accentEnabled={true}
+                  accentText="Next Move?"
+                  accentGradientClass="bg-gradient-to-r from-white via-[#D8BFD8] to-[#FBFCFF] bg-clip-text text-transparent inline-block"
+                  className="font-display text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight"
+                />
               </ScrollReveal>
 
               <ScrollReveal delay={0.2}>

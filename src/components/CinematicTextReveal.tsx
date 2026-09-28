@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 
 export interface CinematicTextRevealProps {
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'div' | 'span';
   text: string;
   revealMode?: 'words' | 'characters' | 'lines';
   textColor?: string;
@@ -49,6 +50,7 @@ const easingMap: Record<string, [number, number, number, number]> = {
 };
 
 export const CinematicTextReveal: React.FC<CinematicTextRevealProps> = ({
+  as = 'div',
   text,
   revealMode = 'words',
   textColor,
@@ -296,8 +298,10 @@ export const CinematicTextReveal: React.FC<CinematicTextRevealProps> = ({
     letterSpacing: `${letterSpacing}em`,
   };
 
+  const MotionComponent = (motion as any)[as] || motion.div;
+
   return (
-    <motion.div
+    <MotionComponent
       ref={rootRef}
       className={className}
       style={rootStyle}
@@ -308,7 +312,7 @@ export const CinematicTextReveal: React.FC<CinematicTextRevealProps> = ({
       {tokens.map((token, index) => (
         <AnimatedToken key={token.key} value={token.value} tokenType={token.type} index={index} />
       ))}
-    </motion.div>
+    </MotionComponent>
   );
 };
 
