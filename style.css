@@ -2048,6 +2048,418 @@ img {
   .industries-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* ==========================================================================
+   ABOUT PAGE DESIGN SYSTEM & EDITORIAL COMPONENTS
+   ========================================================================== */
+.about-hero-section {
+  padding: 5rem 0 4rem;
+  background-color: var(--c-palladian);
+  border-bottom: 1px solid var(--c-border-subtle);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.about-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-hero-title {
+  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--c-abyssal);
+}
+
+.about-hero-desc {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--c-text-secondary);
+  max-width: 600px;
+}
+
+.about-kpi-ribbon {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.8rem;
+  background: var(--c-abyssal);
+  border-radius: 10px;
+  box-shadow: 0 16px 40px -10px rgba(27, 38, 50, 0.25);
+  border: 1px solid var(--c-abyssal-border);
+}
+
+.about-kpi-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-kpi-num {
+  font-family: var(--f-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--c-flame);
+  line-height: 1.1;
+}
+
+.about-kpi-label {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A6B5C5;
+  margin-top: 0.35rem;
+}
+
+/* Story & Milestone Timeline Section */
+.about-story-section {
+  padding: 6.5rem 0;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--c-border-subtle);
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.5rem;
+  align-items: flex-start;
+}
+
+.about-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.about-narrative p {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--c-text-secondary);
+}
+
+.about-narrative p strong {
+  color: var(--c-abyssal);
+}
+
+.story-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--c-oatmeal);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2rem;
+  top: 4px;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--c-white);
+  border: 3px solid var(--c-flame);
+  box-shadow: 0 0 0 4px rgba(255, 177, 98, 0.2);
+}
+
+.timeline-year {
+  font-family: var(--f-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--c-truffle);
+  letter-spacing: 0.08em;
+}
+
+.timeline-heading {
+  font-family: var(--f-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--c-abyssal);
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--c-text-secondary);
+  line-height: 1.5;
+}
+
+/* Infrastructure Bento Grid Section */
+.facility-bento-section {
+  padding: 6.5rem 0;
+  background-color: var(--c-palladian-light);
+  border-bottom: 1px solid var(--c-border-subtle);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.bento-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--c-oatmeal);
+  background: var(--c-white);
+  box-shadow: 0 10px 30px rgba(27, 38, 50, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, border-color 0.3s ease, box-shadow 0.4s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c-flame);
+  box-shadow: 0 20px 45px rgba(27, 38, 50, 0.12);
+}
+
+.bento-card.span-2 {
+  grid-column: span 2;
+}
+
+.bento-card-media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.bento-card.span-2 .bento-card-media {
+  height: 250px;
+}
+
+.bento-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.bento-card:hover .bento-card-media img {
+  transform: scale(1.04);
+}
+
+.bento-card-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.bento-card-tag {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-truffle);
+  font-weight: 600;
+}
+
+.bento-card-title {
+  font-family: var(--f-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-abyssal);
+  line-height: 1.25;
+}
+
+.bento-card-desc {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--c-text-secondary);
+}
+
+.bento-specs-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* Ethos Dual-Column Specimen Section */
+.about-ethos-section {
+  padding: 6.5rem 0;
+  background-color: var(--c-abyssal);
+  color: var(--c-white);
+  border-bottom: 1px solid var(--c-border-subtle);
+}
+
+.ethos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.ethos-card {
+  border-radius: 10px;
+  padding: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(34, 48, 63, 0.6);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ethos-card.mission-card {
+  border-top: 4px solid var(--c-flame);
+}
+
+.ethos-card.vision-card {
+  border-top: 4px solid var(--c-truffle);
+}
+
+.ethos-card:hover {
+  border-color: rgba(255, 177, 98, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.ethos-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ethos-card-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--c-white);
+}
+
+.ethos-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.ethos-list-item {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #C1CCD8;
+}
+
+.ethos-list-item .ethos-bullet {
+  color: var(--c-flame);
+  font-size: 1.1rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.ethos-card.vision-card .ethos-bullet {
+  color: var(--c-flame);
+}
+
+/* Quality Assurance Standards */
+.quality-standards-section {
+  padding: 6.5rem 0;
+  background-color: var(--c-palladian);
+  border-bottom: 1px solid var(--c-border-subtle);
+}
+
+.quality-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.quality-pillar-card {
+  background: var(--c-white);
+  border: 1px solid var(--c-oatmeal);
+  border-radius: 10px;
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 10px 25px rgba(27, 38, 50, 0.04);
+}
+
+.quality-pillar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(255, 177, 98, 0.15);
+  border: 1px solid rgba(255, 177, 98, 0.35);
+  color: var(--c-abyssal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.quality-pillar-title {
+  font-family: var(--f-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-abyssal);
+}
+
+.quality-pillar-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--c-text-secondary);
+}
+
+@media (max-width: 992px) {
+  .about-hero-grid,
+  .about-story-grid,
+  .ethos-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-kpi-ribbon {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card.span-2 {
+    grid-column: span 1;
+  }
+
+  .quality-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ==========================================================================
    REACT BITS: TEXTTYPE COMPONENT CSS
@@ -2068,4 +2480,5 @@ img {
 .text-type__cursor--hidden {
   display: none;
 }
+
 

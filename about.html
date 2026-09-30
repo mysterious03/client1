@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Dhanasree Hydraulics & Equipments</title>
-  <meta name="description" content="Learn about Dhanasree Hydraulics & Equipments, our manufacturing capabilities in Chennai, and our mission to provide complete engineering systems and fluid power units.">
+  <meta name="description" content="Discover Dhanasree Hydraulics & Equipments — our history, Melayanambakkam manufacturing facilities, 350-bar testing labs, mission, and industrial engineering leadership in Chennai, India.">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -29,7 +30,7 @@
   <!-- ================= FLOATING PILL NAVBAR ================= -->
   <div class="sticky top-4 z-50 px-4 w-full">
     <header class="flex items-center justify-between px-6 py-3 md:py-4 shadow-lg max-w-5xl rounded-full mx-auto w-full bg-white/95 backdrop-blur border border-slate-200/80 transition-all">
-      <a href="index.html" class="flex items-center gap-2.5">
+      <a href="index.html" class="flex items-center gap-2.5" id="nav-brand">
         <span class="w-8 h-8 rounded-full bg-[#1B2632] text-[#FFB162] font-bold text-xs flex items-center justify-center tracking-wider shadow-sm">dhe</span>
         <div class="flex flex-col">
           <span class="font-bold text-sm tracking-tight text-[#1B2632] leading-tight">DHANASREE</span>
@@ -77,107 +78,297 @@
     </header>
   </div>
 
-  <!-- Page Hero -->
-  <section class="page-hero">
+  <!-- ================= EDITORIAL ABOUT HERO SECTION ================= -->
+  <section class="about-hero-section">
     <div class="container">
-      <span class="mono-tag">Company Profile &amp; Ethos</span>
-      <h1 class="page-hero-title">Engineering Excellence Built On Integrity</h1>
-      <p class="page-hero-desc">
-        Dhanasree Hydraulics & Equipments manufactures and supplies complete engineering systems and hydraulic power units to the complete satisfaction of our customers at Padi, Chennai.
-      </p>
+      <div class="about-hero-grid">
+        <div class="about-hero-content">
+          <div class="flex items-center gap-2">
+            <span class="mono-tag">Est. Chennai, India // Fluid Power Engineering</span>
+          </div>
+          <h1 class="about-hero-title">
+            Engineering Motion.<br>
+            <span class="text-[#A35139]">Grounded In Integrity.</span>
+          </h1>
+          <p class="about-hero-desc">
+            Dhanasree Hydraulics & Equipments engineers, manufactures, and supplies complete turnkey fluid power systems, 5,000-ton industrial presses, heavy hydraulic cylinders, and automated material handling infrastructure built for India's most demanding industrial operations.
+          </p>
+          <div class="flex items-center gap-4 flex-wrap pt-2">
+            <a href="#story" class="btn btn-primary">
+              Our Heritage &amp; Story <span>&darr;</span>
+            </a>
+            <button class="btn btn-outline open-rfq-btn">
+              Request Technical Consultation
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div class="about-kpi-ribbon">
+            <div class="about-kpi-item">
+              <span class="about-kpi-num">350+ Bar</span>
+              <span class="about-kpi-label">Operating Pressure</span>
+            </div>
+            <div class="about-kpi-item">
+              <span class="about-kpi-num">5,000 MT</span>
+              <span class="about-kpi-label">Max Press Load</span>
+            </div>
+            <div class="about-kpi-item">
+              <span class="about-kpi-num">15,000 KG</span>
+              <span class="about-kpi-label">Dock Transfer</span>
+            </div>
+            <div class="about-kpi-item">
+              <span class="about-kpi-num">100%</span>
+              <span class="about-kpi-label">Pressure Tested</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- About Overview Section -->
-  <section style="padding: 5.5rem 0; background-color: var(--c-white); border-bottom: 1px solid var(--c-border-subtle);">
+  <!-- ================= STORY & HISTORICAL TIMELINE ================= -->
+  <section class="about-story-section" id="story">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-        <div>
-          <span class="mono-tag" style="color: var(--c-truffle);">Who We Are, What We Do</span>
-          <h2 class="section-title" style="margin: 0.5rem 0 1.5rem;">Industrial Engineering Grounded in Precision</h2>
-          <p style="margin-bottom: 1rem; font-size: 1.05rem;">
-            Based in Chennai, Tamil Nadu, <strong>Dhanasree Hydraulics & Equipments</strong> is an engineering powerhouse specializing in the design, fabrication, assembly, and turnkey commissioning of heavy-duty hydraulic cylinders, power packs, industrial presses, and lifting equipment.
+      <div class="about-story-grid">
+        
+        <!-- Left: Editorial Narrative -->
+        <div class="about-narrative">
+          <span class="mono-tag" style="color: var(--c-truffle);">Who We Are &mdash;&mdash;</span>
+          <h2 class="section-title">Built On Practical Engineering &amp; Uncompromised Precision.</h2>
+          <p>
+            Based in Chennai, Tamil Nadu, <strong>Dhanasree Hydraulics & Equipments</strong> was founded with a clear, focused mandate: to provide heavy manufacturing and infrastructure enterprises with fluid-power systems that perform reliably under punishing, continuous duty cycles.
           </p>
-          <p style="margin-bottom: 1.5rem;">
-            Our engineering team focuses on real-world industrial durability. Every cylinder rod is machined to exact tolerances, every power pack manifold undergoes rigorous pressure-testing, and each structural weld is inspected for continuous cyclic load endurance.
+          <p>
+            Industrial hydraulics leave zero margin for error. A micro-leak in a 350-bar line, a misaligned guide bushing in a four-column press, or an uneven seal on an automotive elevator can halt an entire plant. That is why every system leaving our factory is designed with structural over-capacity, premium alloys, induction-hardened chrome plating, and precision-honed barrels.
+          </p>
+          <p>
+            Today, our dual presence in <strong>Melayanambakkam (Manufacturing Plant)</strong> and <strong>Padi (Operations &amp; Logistics Center)</strong> allows us to serve tier-1 clients across automotive, infrastructure, heavy metal forming, and intra-logistics with unparalleled speed and technical depth.
           </p>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; border-top: 1px solid var(--c-border-subtle); padding-top: 1.5rem;">
+          <div class="flex items-center gap-6 pt-4 border-t border-slate-200">
             <div>
-              <span style="font-family: var(--f-mono); font-size: 1.4rem; font-weight: 700; color: var(--c-flame);">Melayanambakkam</span>
-              <span class="mono-tag" style="display: block; margin-top: 0.25rem;">Manufacturing Plant</span>
+              <span class="font-mono text-xl font-bold text-[#1B2632] block">Melayanambakkam</span>
+              <span class="mono-tag text-xs text-slate-500">Machining, Honing &amp; Test Plant</span>
             </div>
+            <div class="h-8 w-px bg-slate-300"></div>
             <div>
-              <span style="font-family: var(--f-mono); font-size: 1.4rem; font-weight: 700; color: var(--c-truffle);">Padi, Chennai</span>
-              <span class="mono-tag" style="display: block; margin-top: 0.25rem;">Operations & Hub</span>
+              <span class="font-mono text-xl font-bold text-[#A35139] block">Padi, Chennai</span>
+              <span class="mono-tag text-xs text-slate-500">Commercial &amp; Logistics Hub</span>
             </div>
           </div>
         </div>
 
-        <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--c-oatmeal); box-shadow: 0 20px 45px rgba(27, 38, 50, 0.12);">
-          <img src="assets/images/capability.jpg" alt="Manufacturing Operations at Dhanasree Hydraulics">
+        <!-- Right: Milestones Timeline -->
+        <div class="story-timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">2012 &mdash; Inception</span>
+            <h3 class="timeline-heading">Foundation in Chennai</h3>
+            <p class="timeline-desc">
+              Established operations specializing in custom hydraulic cylinder engineering, fluid power repair, and high-pressure power pack design for local manufacturing plants.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2016 &mdash; Expansion</span>
+            <h3 class="timeline-heading">Melayanambakkam Plant Facility</h3>
+            <p class="timeline-desc">
+              Commissioned a dedicated heavy machining facility with CNC turning, deep-hole honing, submerged pump assembly bays, and hydrostatic testing testbeds.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">2019 &mdash; Scaling</span>
+            <h3 class="timeline-heading">5,000-Ton Press &amp; Telescopic Division</h3>
+            <p class="timeline-desc">
+              Scaled manufacturing to build monolithic four-column hydraulic presses up to 5,000 metric tons and multi-stage synchronized jacking cylinders for civil infrastructure.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-year">Present &amp; Beyond</span>
+            <h3 class="timeline-heading">Turnkey Automation &amp; Tier-1 Deployments</h3>
+            <p class="timeline-desc">
+              Delivering automated dock levelers, heavy scissor freight lifts, powered roller conveyors, and proportional fluid power stations trusted by Ford, L&amp;T, TVS, Saint-Gobain, and Apollo Tyres.
+            </p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Mission & Vision Section (Direct Documented Content) -->
-  <section style="padding: 6rem 0; background-color: var(--c-palladian);" id="vision">
+  <!-- ================= MANUFACTURING INFRASTRUCTURE BENTO GRID ================= -->
+  <section class="facility-bento-section" id="infrastructure">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+      <div class="section-head-split">
+        <div class="section-title-wrap">
+          <span class="mono-tag">Facilities &amp; Tooling &mdash;&mdash;</span>
+          <h2 class="section-title">Manufacturing Infrastructure</h2>
+        </div>
+        <div class="section-side-action">
+          <p>
+            Our dedicated tooling and testing bays ensure every hydraulic cylinder, manifold, and machine frame conforms to strict dimensional tolerances and ISO quality benchmarks.
+          </p>
+        </div>
+      </div>
+
+      <div class="bento-grid">
+        
+        <!-- Bento 1: Heavy Machining & Honing Plant (Span 2) -->
+        <div class="bento-card span-2">
+          <div class="bento-card-media">
+            <img src="assets/images/capability.jpg" alt="Heavy Machining & Deep-Hole Honing Bay at Melayanambakkam">
+          </div>
+          <div class="bento-card-content">
+            <span class="bento-card-tag">Facility 01 // Melayanambakkam Plant</span>
+            <h3 class="bento-card-title">Heavy CNC Machining &amp; ISO H8 Honing Bay</h3>
+            <p class="bento-card-desc">
+              Equipped with heavy-duty CNC lathes, internal roller burnishing systems, and precision deep-hole honing rigs capable of machining cylinders up to 450mm bore diameter and 3,000mm stroke length.
+            </p>
+            <div class="bento-specs-row">
+              <span class="card-spec-chip">ISO H8 Bore Tolerance</span>
+              <span class="card-spec-chip">Ra &lt; 0.2µm Finish</span>
+              <span class="card-spec-chip">St52 / E355 Steel</span>
+              <span class="card-spec-chip">Induction Chrome Plating</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 2: 350-Bar Test Bench -->
+        <div class="bento-card">
+          <div class="bento-card-media">
+            <img src="assets/images/hero.jpg" alt="350-Bar High Pressure Hydrostatic Test Station">
+          </div>
+          <div class="bento-card-content">
+            <span class="bento-card-tag">Facility 02 // Testing Lab</span>
+            <h3 class="bento-card-title">350-Bar Hydrostatic Test Rig</h3>
+            <p class="bento-card-desc">
+              Every cylinder and manifold block undergoes 1.5× proof-pressure hydrostatic testing to verify zero seal bypass, zero body deflection, and pressure-hold stability.
+            </p>
+            <div class="bento-specs-row">
+              <span class="card-spec-chip">450 Bar Burst Proof</span>
+              <span class="card-spec-chip">Digital Transducer Logging</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 3: Structural Fabrication & Press Assembly -->
+        <div class="bento-card">
+          <div class="bento-card-media">
+            <img src="assets/images/prod_press.jpg" alt="Monolithic Steel Press Frame Assembly">
+          </div>
+          <div class="bento-card-content">
+            <span class="bento-card-tag">Facility 03 // Fabrication</span>
+            <h3 class="bento-card-title">Monolithic Press Fabrication</h3>
+            <p class="bento-card-desc">
+              Heavy structural welding bays for four-column and H-frame presses with ultrasonic weld seam inspection and stress-relieved platens for zero bed deflection.
+            </p>
+            <div class="bento-specs-row">
+              <span class="card-spec-chip">Stress-Relieved Steel</span>
+              <span class="card-spec-chip">Ultrasonic NDT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bento 4: Operations & Dispatch Center (Span 2) -->
+        <div class="bento-card span-2">
+          <div class="bento-card-media">
+            <img src="assets/images/ind_material_handling.jpg" alt="Padi Operations & Dispatch Facility">
+          </div>
+          <div class="bento-card-content">
+            <span class="bento-card-tag">Facility 04 // Padi Logistics Hub</span>
+            <h3 class="bento-card-title">Commercial Operations, Spares &amp; Rapid Dispatch</h3>
+            <p class="bento-card-desc">
+              Strategic operations center in Padi, Chennai, maintaining an inventory of hydraulic seals, directional valves, proportional manifolds, high-pressure fittings, and rapid-turnaround emergency service skids.
+            </p>
+            <div class="bento-specs-row">
+              <span class="card-spec-chip">Strategic Padi Location</span>
+              <span class="card-spec-chip">OEM Spare Stock</span>
+              <span class="card-spec-chip">24/7 Field Support</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MISSION & VISION DUAL ETHOS SPECIMEN ================= -->
+  <section class="about-ethos-section" id="ethos">
+    <div class="container">
+      <div class="section-head-split">
+        <div class="section-title-wrap">
+          <span class="mono-tag" style="color: var(--c-flame);">Corporate Ethos &amp; Direction &mdash;&mdash;</span>
+          <h2 class="section-title" style="color: #FFFFFF;">Mission &amp; Vision</h2>
+        </div>
+        <div class="section-side-action">
+          <p style="color: #A6B5C5;">
+            Our documented corporate charter guiding daily manufacturing precision, ethical partnerships, and long-term industrial commitment.
+          </p>
+        </div>
+      </div>
+
+      <div class="ethos-grid">
         
         <!-- Mission Card -->
-        <div style="background: var(--c-white); border: 1px solid var(--c-oatmeal); border-radius: 6px; padding: 3rem; display: flex; flex-direction: column; gap: 1.5rem; border-top: 4px solid var(--c-flame);">
-          <span class="mono-tag" style="color: var(--c-flame);">Who We Are, What We Do</span>
-          <h2 style="font-size: 2rem; text-transform: uppercase;">Our Mission</h2>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
-              <span>To follow the best practices as a responsible corporate and contribute in sustainable development of the society including employees.</span>
+        <div class="ethos-card mission-card">
+          <div class="ethos-card-header">
+            <span class="mono-tag" style="color: var(--c-flame);">Who We Are, What We Do</span>
+            <span class="w-7 h-7 rounded-full bg-amber-500/20 text-[#FFB162] font-mono text-xs flex items-center justify-center font-bold">01</span>
+          </div>
+          <h3 class="ethos-card-title">Our Mission</h3>
+          <ul class="ethos-list">
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To follow the best practices as a responsible corporate entity and contribute to the sustainable development of society, including our workforce.</span>
             </li>
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
-              <span>To preserve and enhance the integrity in all our business dealings by continuous monitoring, control and interventions without any compromises and concessions.</span>
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To preserve and enhance integrity across all business dealings through continuous quality monitoring, control, and zero-compromise interventions.</span>
             </li>
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
-              <span>To achieve leading position in each of our business sector by sustainable and profitable growth creating long term wealth for the shareholders.</span>
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To achieve leading market positions in our engineering sectors through sustainable, profitable growth creating lasting industrial value.</span>
             </li>
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
-              <span>To provide total customer satisfaction through quality products and services at competitive costs.</span>
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To deliver total customer satisfaction through uncompromising product reliability, precision tolerances, and competitive lifecycle costs.</span>
             </li>
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
-              <span>To make continuous up gradation in our products through innovation anticipating the needs of our markets and customers.</span>
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To drive continuous product upgrades and engineering innovation anticipating the evolving needs of industrial fluid-power markets.</span>
             </li>
           </ul>
         </div>
 
-        <!-- Vision Card (Truffle Rust Theme) -->
-        <div style="background: var(--c-abyssal); color: var(--c-white); border-radius: 6px; padding: 3rem; display: flex; flex-direction: column; gap: 1.5rem; border-top: 4px solid var(--c-truffle);">
-          <span class="mono-tag" style="color: var(--c-flame);">What We Aspire To Be</span>
-          <h2 style="font-size: 2rem; text-transform: uppercase; color: var(--c-white);">Our Vision</h2>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; color: #C1CCD8;">
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
-              <span>To enlarge our product portfolio and production capacities in each of our businesses leveraging our domain knowledge, expertise and resources by fostering global partnerships and alliances to become leading global player with dominant market share.</span>
+        <!-- Vision Card -->
+        <div class="ethos-card vision-card">
+          <div class="ethos-card-header">
+            <span class="mono-tag" style="color: var(--c-flame);">What We Aspire To Be</span>
+            <span class="w-7 h-7 rounded-full bg-orange-500/20 text-[#FFB162] font-mono text-xs flex items-center justify-center font-bold">02</span>
+          </div>
+          <h3 class="ethos-card-title">Our Vision</h3>
+          <ul class="ethos-list">
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To enlarge our engineering portfolio and production capacities by leveraging domain expertise, resources, and global technology alliances.</span>
             </li>
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
-              <span>To be the partner of choice for our customers by providing technology based world class products and performance enhancing services tailored to meet their requirements.</span>
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To be the partner of choice for industrial enterprises by delivering technology-based, world-class fluid power products and performance services.</span>
             </li>
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
-              <span>To develop bench mark innovations and technologies to suit the changing requirements of the customers &amp; the industry by continuous investments in updating our manufacturing &amp; human resources.</span>
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To develop benchmark manufacturing innovations suited to changing global standards through continuous capital and technical investment.</span>
             </li>
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
-              <span>To provide total customer satisfaction through quality products and services at competitive costs.</span>
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To provide end-to-end turnkey fluid engineering solutions from conceptual sizing to on-site commissioning and maintenance.</span>
             </li>
-            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
-              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
-              <span>To attain the leadership in technology, quality, services and costs with integrity and stability.</span>
+            <li class="ethos-list-item">
+              <span class="ethos-bullet">&bull;</span>
+              <span>To attain unquestioned leadership in technology, quality, service, and integrity across the heavy fluid power landscape.</span>
             </li>
           </ul>
         </div>
@@ -186,11 +377,54 @@
     </div>
   </section>
 
-  <!-- Clientele Section -->
-  <section class="clientele-section" style="padding: 5rem 0;">
+  <!-- ================= ENGINEERING QUALITY PILLARS ================= -->
+  <section class="quality-standards-section">
     <div class="container">
-      <div class="clientele-header">
-        <span class="mono-tag">Corporate &amp; Industrial Clientele</span>
+      <div class="section-head-split">
+        <div class="section-title-wrap">
+          <span class="mono-tag">Quality Assurance Protocols &mdash;&mdash;</span>
+          <h2 class="section-title">The Engineering Standard</h2>
+        </div>
+        <div class="section-side-action">
+          <p>
+            Every product engineered at Dhanasree Hydraulics adheres to rigorous quality control measures from raw material spectroscopic validation to hydrostatic burst integrity.
+          </p>
+        </div>
+      </div>
+
+      <div class="quality-pillars-grid">
+        <div class="quality-pillar-card">
+          <div class="quality-pillar-icon">01</div>
+          <h3 class="quality-pillar-title">CAD &amp; FEA Stress Analysis</h3>
+          <p class="quality-pillar-text">
+            Finite Element Analysis (FEA) is conducted on all cylinder mountings, tie-rods, clevis pins, and press platens to eliminate stress concentrations before metal cutting begins.
+          </p>
+        </div>
+
+        <div class="quality-pillar-card">
+          <div class="quality-pillar-icon">02</div>
+          <h3 class="quality-pillar-title">Hard Chrome Plating Integrity</h3>
+          <p class="quality-pillar-text">
+            All piston rods utilize EN8/EN9 alloy steel with 25–30µm hard chrome deposit, surface-ground and polished to Ra &lt; 0.2µm for maximum seal longevity under harsh grit.
+          </p>
+        </div>
+
+        <div class="quality-pillar-card">
+          <div class="quality-pillar-icon">03</div>
+          <h3 class="quality-pillar-title">100% Hydrostatic Proof Testing</h3>
+          <p class="quality-pillar-text">
+            Each manufactured power unit and cylinder is subject to continuous 1.5× rated pressure holding cycles with zero-leakage velocity fuses and digital transducer verification.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CLIENTELE & TRUST ================= -->
+  <section class="clientele-section" style="padding: 5.5rem 0; background-color: #FFFFFF; border-bottom: 1px solid var(--c-border-subtle);">
+    <div class="container">
+      <div class="clientele-header text-center max-w-2xl mx-auto">
+        <span class="mono-tag">Trusted Across Heavy Industry &mdash;&mdash;</span>
         <h2 class="section-title" style="font-size: 2.2rem; margin-top: 0.5rem;">Partnering With Leading Enterprises</h2>
       </div>
       <div class="clientele-logos" style="margin-top: 3rem;">
@@ -213,7 +447,30 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ================= FINAL CTA SECTION ================= -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-grid">
+        <div>
+          <span class="mono-tag" style="color: var(--c-flame);">Direct Engineering Consultation</span>
+          <h2 class="cta-banner-title">Ready To Engineer Your Custom Hydraulic Solution?</h2>
+          <p class="cta-banner-desc">
+            Speak directly with our technical team to discuss operating pressure, cylinder bore, stroke lengths, power pack schematics, or custom press machinery.
+          </p>
+        </div>
+        <div class="cta-banner-actions">
+          <a href="tel:9840612674" class="btn btn-primary" style="font-size: 1rem; padding: 0.9rem 1.8rem;">
+            Call +91 9840612674 <span>&rarr;</span>
+          </a>
+          <button class="btn btn-white open-rfq-btn">
+            Submit Equipment RFQ
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SITE FOOTER ================= -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-main-grid">
@@ -225,7 +482,7 @@
               <span class="brand-sub" style="color: #9AA8B9;">Hydraulics & Equipments</span>
             </div>
           </div>
-          <p>Complete engineering systems and hydraulic power units manufactured to client specifications.</p>
+          <p>Complete engineering systems, high-tonnage presses, and hydraulic power units manufactured to exacting client specifications in Chennai.</p>
         </div>
         <div class="footer-nav-col">
           <h4>Navigation</h4>
@@ -237,21 +494,22 @@
           </ul>
         </div>
         <div class="footer-contact-col">
-          <h4>Plant Location</h4>
-          <p style="color: #C1CCD8; font-size: 0.92rem;">
-            No. 489/1, Konrajkuppam, Melayanambakkam, Near Royal Club, Chennai &ndash; 600095<br>
+          <h4>Plant Locations</h4>
+          <p style="color: #C1CCD8; font-size: 0.92rem; line-height: 1.6;">
+            <strong>Manufacturing Plant:</strong> No. 489/1, Konrajkuppam, Melayanambakkam, Near Royal Club, Chennai &ndash; 600095<br>
+            <strong>Operations Hub:</strong> Padi, Chennai &ndash; 600050<br>
             Phone: +91 9840612674
           </p>
         </div>
       </div>
       <div class="footer-bottom-bar">
         <span>&copy; 2026 Dhanasree Hydraulics & Equipments. All rights reserved.</span>
-        <span>ENGINEERING / INDUSTRY / TOGETHER</span>
+        <span>PRECISION / FLUID POWER / INTEGRITY</span>
       </div>
     </div>
   </footer>
 
-  <!-- RFQ Modal -->
+  <!-- ================= RFQ MODAL ================= -->
   <div class="rfq-modal-overlay" id="rfq-modal">
     <div class="rfq-modal-container">
       <button class="modal-close-btn" id="modal-close">&times;</button>
@@ -261,17 +519,17 @@
         <div class="form-group-row">
           <div class="form-field">
             <label for="rfq-name">Full Name *</label>
-            <input type="text" id="rfq-name" required placeholder="Name">
+            <input type="text" id="rfq-name" required placeholder="Your full name">
           </div>
           <div class="form-field">
-            <label for="rfq-company">Company *</label>
-            <input type="text" id="rfq-company" required placeholder="Company">
+            <label for="rfq-company">Company / Organization *</label>
+            <input type="text" id="rfq-company" required placeholder="Company name">
           </div>
         </div>
         <div class="form-group-row">
           <div class="form-field">
             <label for="rfq-phone">Contact Phone *</label>
-            <input type="tel" id="rfq-phone" required placeholder="+91">
+            <input type="tel" id="rfq-phone" required placeholder="+91 98406 XXXXX">
           </div>
           <div class="form-field">
             <label for="rfq-email">Email Address *</label>
@@ -279,22 +537,23 @@
           </div>
         </div>
         <div class="form-field">
-          <label for="rfq-category">Product / Category</label>
+          <label for="rfq-category">Product / Machinery Category</label>
           <select id="rfq-category">
             <option value="cylinders">Hydraulic Cylinders</option>
             <option value="power-packs">Hydraulic Power Packs</option>
             <option value="presses">Hydraulic Presses</option>
-            <option value="lifts">Hydraulic Lifts</option>
-            <option value="handling">Material Handling</option>
-            <option value="conveyors">Conveyors</option>
+            <option value="lifts">Hydraulic Scissor & Goods Lifts</option>
+            <option value="handling">Dock Levelers & Material Handling</option>
+            <option value="conveyors">Industrial Conveyors</option>
           </select>
         </div>
         <div class="form-field">
-          <label for="rfq-specs">Technical Requirements</label>
-          <textarea id="rfq-specs" rows="3" placeholder="Tonnage, operating pressure, dimensions..."></textarea>
+          <label for="rfq-specs">Technical Requirements &amp; Parameters</label>
+          <textarea id="rfq-specs" rows="3" placeholder="Specify required tonnage, operating pressure (Bar), stroke length (mm), or application details..."></textarea>
         </div>
         <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1rem;">
-          <button type="submit" class="btn btn-primary">Submit RFQ &rarr;</button>
+          <button type="button" class="btn btn-outline" id="modal-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Specification &rarr;</button>
         </div>
       </form>
     </div>
