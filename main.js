@@ -776,4 +776,100 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStickyTimeline();
   }
 
+  // 8. ABOUT PAGE: GSAP SCROLLTRIGGER REVEAL ANIMATIONS
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Hero Section Reveal
+    const heroContent = document.querySelector('.about-hero-content');
+    const kpiRibbon = document.querySelector('.about-kpi-ribbon');
+    if (heroContent) {
+      gsap.from('.about-hero-content > *', {
+        y: 25,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: 'power3.out'
+      });
+    }
+    if (kpiRibbon) {
+      gsap.from('.about-kpi-item', {
+        scale: 0.92,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.1,
+        ease: 'back.out(1.4)',
+        delay: 0.3
+      });
+    }
+
+    // Bento Grid Reveal
+    const bentoGrid = document.querySelector('.bento-grid');
+    if (bentoGrid) {
+      gsap.from('.bento-card', {
+        scrollTrigger: {
+          trigger: '.bento-grid',
+          start: 'top 82%',
+          toggleActions: 'play none none none'
+        },
+        y: 35,
+        opacity: 0,
+        duration: 0.75,
+        stagger: 0.15,
+        ease: 'power2.out'
+      });
+    }
+
+    // Ethos Dual Cards Reveal
+    const ethosGrid = document.querySelector('.ethos-grid');
+    if (ethosGrid) {
+      gsap.from('.ethos-card', {
+        scrollTrigger: {
+          trigger: '.ethos-grid',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.85,
+        stagger: 0.2,
+        ease: 'power2.out'
+      });
+    }
+
+    // Quality Pillars Reveal
+    const qualityGrid = document.querySelector('.quality-pillars-grid');
+    if (qualityGrid) {
+      gsap.from('.quality-pillar-card', {
+        scrollTrigger: {
+          trigger: '.quality-pillars-grid',
+          start: 'top 82%',
+          toggleActions: 'play none none none'
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.14,
+        ease: 'power2.out'
+      });
+    }
+
+    // Clientele Badges Reveal
+    const clientLogos = document.querySelector('.clientele-logos');
+    if (clientLogos) {
+      gsap.from('.client-logo-item', {
+        scrollTrigger: {
+          trigger: '.clientele-logos',
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        scale: 0.88,
+        opacity: 0,
+        duration: 0.45,
+        stagger: 0.03,
+        ease: 'back.out(1.3)'
+      });
+    }
+  }
+
 });
