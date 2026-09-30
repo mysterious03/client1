@@ -2537,7 +2537,7 @@ img {
 
 .bento-card {
   position: relative;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   border: 1px solid var(--c-oatmeal);
   background: var(--c-white);
@@ -2553,52 +2553,223 @@ img {
   transform: translateY(-6px);
   border-color: var(--c-flame);
   box-shadow: 0 25px 50px -10px rgba(27, 38, 50, 0.15),
-              0 0 20px rgba(255, 177, 98, 0.15);
+              0 0 20px rgba(255, 177, 98, 0.18);
 }
 
 .bento-card.span-2 {
   grid-column: span 2;
 }
 
-.bento-card-media {
-  position: relative;
-  height: 230px;
-  overflow: hidden;
-  background-color: #121A22;
+/* 1. Flagship Full-Bleed Bento */
+.bento-card.bento-flagship {
+  min-height: 380px;
+  background: #121A22;
+  border: 1px solid rgba(255, 177, 98, 0.3);
 }
 
-.bento-card.span-2 .bento-card-media {
-  height: 270px;
-}
-
-.bento-card-media::after {
-  content: '';
+.bento-bg-media {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(27, 38, 50, 0.6) 100%);
-  pointer-events: none;
+  overflow: hidden;
 }
 
-.bento-card-media img {
+.bento-bg-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.bento-card:hover .bento-card-media img {
+.bento-card.bento-flagship:hover .bento-bg-media img {
   transform: scale(1.06);
 }
 
-.bento-card-content {
-  padding: 2rem;
+.bento-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(27, 38, 50, 0.4) 0%, rgba(27, 38, 50, 0.88) 55%, rgba(27, 38, 50, 0.98) 100%);
+}
+
+.bento-card-inner-float {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.25rem;
+  gap: 1.5rem;
+}
+
+.bento-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bento-glass-pill {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.bento-bottom-content {
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+}
+
+.bento-card.bento-flagship .bento-specs-row {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+.bento-card.bento-flagship .card-spec-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: #E2E8F0;
+}
+
+/* 2. Telemetry Stat Bento */
+.bento-card.bento-telemetry {
+  background: linear-gradient(145deg, #1B2632 0%, #243547 100%);
+  border: 1px solid rgba(255, 177, 98, 0.3);
+  color: #FFFFFF;
+}
+
+.bento-card.bento-telemetry .bento-card-content {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.25rem;
+}
+
+.telemetry-gauge-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.5rem 0;
+  margin: auto 0;
+}
+
+.telemetry-big-stat {
+  font-family: var(--f-mono);
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--c-flame);
+  text-shadow: 0 4px 20px rgba(255, 177, 98, 0.35);
+}
+
+.telemetry-sub {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A6B5C5;
+}
+
+.telemetry-bar-wrap {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0.75rem 0 0.4rem;
+}
+
+.telemetry-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #A35139 0%, #FFB162 100%);
+  border-radius: 3px;
+}
+
+.telemetry-caption {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #8E9EAF;
+}
+
+.bento-card.bento-telemetry .bento-specs-row {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+.bento-card.bento-telemetry .card-spec-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #C1CCD8;
+}
+
+/* 3. Structural Assembly Bento */
+.bento-card.bento-structural .bento-card-media {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bento-card.bento-structural .bento-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card.bento-structural:hover .bento-card-media img {
+  transform: scale(1.06);
+}
+
+.bento-card.bento-structural .bento-card-content {
+  padding: 1.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   flex: 1;
   background: #FFFFFF;
 }
 
+/* 4. Horizontal Split Logistics Bento (Span 2) */
+.bento-card.bento-horizontal .bento-horizontal-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  height: 100%;
+  min-height: 270px;
+}
+
+.bento-h-media {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 240px;
+}
+
+.bento-h-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bento-card.bento-horizontal:hover .bento-h-media img {
+  transform: scale(1.06);
+}
+
+.bento-h-content {
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.85rem;
+  background: #FFFFFF;
+}
+
+/* Generic Bento Inner Elements */
 .bento-card-tag {
   font-family: var(--f-mono);
   font-size: 0.72rem;
