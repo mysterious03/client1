@@ -2292,22 +2292,21 @@ img {
 /* Right: Scrolling Timeline Track & Cards */
 .story-scroll-timeline {
   position: relative;
-  padding-left: 2.75rem;
+  padding-left: 3.25rem;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
   padding-top: 0.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
 }
 
 .timeline-line-track {
   position: absolute;
-  left: 12px;
-  top: 24px;
-  bottom: 60px;
-  width: 3px;
-  background: rgba(201, 193, 177, 0.45);
-  border-radius: 3px;
+  left: 14px;
+  top: 32px;
+  bottom: 80px;
+  width: 4px;
+  background: rgba(201, 193, 177, 0.35);
+  border-radius: 4px;
 }
 
 .timeline-line-fill {
@@ -2317,30 +2316,36 @@ img {
   width: 100%;
   height: 0%;
   background: linear-gradient(180deg, #A35139 0%, #FFB162 100%);
-  border-radius: 3px;
-  transition: height 0.15s ease-out;
+  border-radius: 4px;
+  will-change: height;
+  transition: height 0.08s ease-out;
 }
 
 .timeline-card {
   position: relative;
   cursor: pointer;
-  opacity: 0.48;
-  transform: translateX(0);
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 0.32;
+  transform: scale(0.97) translateX(0);
+  margin-bottom: 180px;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-card:last-child {
+  margin-bottom: 30px;
 }
 
 .timeline-card.active {
   opacity: 1;
-  transform: translateX(6px);
+  transform: scale(1.02) translateX(8px);
 }
 
 .timeline-node {
   position: absolute;
-  left: -2.75rem;
-  top: 24px;
+  left: -3.25rem;
+  top: 32px;
   transform: translate(-50%, -50%);
-  width: 26px;
-  height: 26px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: var(--c-white);
   border: 2px solid var(--c-oatmeal);
@@ -2348,7 +2353,7 @@ img {
   align-items: center;
   justify-content: center;
   z-index: 2;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .node-dot {
@@ -2356,40 +2361,40 @@ img {
   height: 8px;
   border-radius: 50%;
   background: var(--c-oatmeal);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .timeline-card.active .timeline-node {
   border-color: var(--c-flame);
   background: #1B2632;
-  box-shadow: 0 0 0 5px rgba(255, 177, 98, 0.28);
+  box-shadow: 0 0 0 6px rgba(255, 177, 98, 0.32);
 }
 
 .timeline-card.active .node-dot {
   background: var(--c-flame);
-  transform: scale(1.25);
+  transform: scale(1.35);
 }
 
 .timeline-card-inner {
   background: var(--c-palladian-light);
   border: 1px solid var(--c-oatmeal);
-  border-radius: 12px;
-  padding: 1.85rem;
+  border-radius: 14px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
+  gap: 0.55rem;
+  transition: all 0.35s ease;
 }
 
 .timeline-card.active .timeline-card-inner {
   background: #FFFFFF;
-  border-color: rgba(255, 177, 98, 0.8);
-  box-shadow: 0 16px 36px rgba(27, 38, 50, 0.09);
+  border-color: rgba(255, 177, 98, 0.9);
+  box-shadow: 0 20px 45px rgba(27, 38, 50, 0.12);
 }
 
 .timeline-card-year {
   font-family: var(--f-mono);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--c-truffle);
   letter-spacing: 0.08em;
@@ -2398,31 +2403,31 @@ img {
 
 .timeline-card-title {
   font-family: var(--f-heading);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--c-abyssal);
   line-height: 1.3;
 }
 
 .timeline-card-desc {
-  font-size: 0.91rem;
+  font-size: 0.93rem;
   color: var(--c-text-secondary);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .timeline-card-chips {
   display: flex;
-  gap: 0.45rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  padding-top: 0.6rem;
+  padding-top: 0.75rem;
 }
 
 .timeline-card-chips span {
   font-family: var(--f-mono);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   background: rgba(44, 59, 77, 0.06);
   color: var(--c-abyssal);
-  padding: 0.22rem 0.55rem;
+  padding: 0.25rem 0.65rem;
   border-radius: 4px;
   border: 1px solid rgba(44, 59, 77, 0.12);
 }

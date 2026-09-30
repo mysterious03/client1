@@ -650,6 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 7. ABOUT PAGE: STICKY SCROLL TIMELINE CONTROLLER
+  const storySection = document.getElementById('story');
   const timelineTrack = document.getElementById('timeline-scroll-track');
   const timelineVerticalFill = document.getElementById('timeline-vertical-fill');
   const timelineCards = document.querySelectorAll('.story-scroll-timeline .timeline-card');
@@ -665,48 +666,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateStickyTimeline() {
       const viewportHeight = window.innerHeight;
-      const trackRect = timelineTrack.getBoundingClientRect();
-      const triggerLine = viewportHeight * 0.45;
+      const triggerY = viewportHeight * 0.48; // Trigger line at 48% viewport height
 
-      // 1. Calculate Vertical Line Progress Fill
-      const totalTrackHeight = trackRect.height;
-      const scrolledPast = triggerLine - trackRect.top;
+      const firstCard = timelineCards[0];
+      const lastCard = timelineCards[timelineCards.length - 1];
+      const firstNode = firstCard.querySelector('.timeline-node') || firstCard;
+      const lastNode = lastCard.querySelector('.timeline-node') || lastCard;
+
+      const firstNodeRect = firstNode.getBoundingClientRect();
+      const lastNodeRect = lastNode.getBoundingClientRect();
+      const totalSpan = lastNodeRect.top - firstNodeRect.top;
+
+      // 1. Precise Node-to-Node Vertical Fill Calculation
       let linePercent = 0;
-      if (scrolledPast > 0 && totalTrackHeight > 0) {
-        linePercent = Math.min(100, Math.max(0, (scrolledPast / totalTrackHeight) * 100));
+      if (triggerY > firstNodeRect.top && totalSpan > 0) {
+        linePercent = Math.min(100, Math.max(0, ((triggerY - firstNodeRect.top) / totalSpan) * 100));
       }
       if (timelineVerticalFill) {
         timelineVerticalFill.style.height = `${linePercent}%`;
       }
 
-      // 2. Identify Active Milestone Card
-      let bestIndex = 0;
-      let minDistance = Infinity;
-
+      // 2. Identify Active Milestone Index (Clean Starting Milestone 0)
+      let activeIndex = 0;
       timelineCards.forEach((card, index) => {
-        const cardRect = card.getBoundingClientRect();
-        const cardCenter = cardRect.top + cardRect.height / 2;
-        const distance = Math.abs(cardCenter - triggerLine);
-
-        // Card that passed trigger line or is closest to triggerLine
-        if (cardRect.top <= triggerLine + 60) {
-          bestIndex = index;
+        const node = card.querySelector('.timeline-node') || card;
+        const nodeTop = node.getBoundingClientRect().top;
+        if (nodeTop <= triggerY + 30) {
+          activeIndex = index;
         }
       });
 
-      if (bestIndex !== currentActiveIndex) {
-        currentActiveIndex = bestIndex;
+      // 3. Smooth State Transition & GSAP Focal Animation
+      if (activeIndex !== currentActiveIndex) {
+        currentActiveIndex = activeIndex;
 
-        // Update card classes
-        timelineCards.forEach((c, idx) => {
+        // Update active class on cards
+        timelineCards.forEach((card, idx) => {
           if (idx === currentActiveIndex) {
-            c.classList.add('active');
+            card.classList.add('active');
           } else {
-            c.classList.remove('active');
+            card.classList.remove('active');
           }
         });
 
-        // Update Focal Card with Smooth Micro-Animation
+        // Update Focal Milestone Card
         const activeCard = timelineCards[currentActiveIndex];
         if (activeCard) {
           const year = activeCard.getAttribute('data-year');
@@ -727,14 +730,21 @@ document.addEventListener('DOMContentLoaded', () => {
             focalProgressFill.style.width = `${stepPercent}%`;
           }
 
-          if (focalYear && focalYear.textContent !== year) {
-            if (typeof gsap !== 'undefined') {
-              gsap.fromTo(focalYear, 
-                { opacity: 0.2, y: -10, scale: 0.95 }, 
-                { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: 'power2.out' }
-              );
-            }
+          if (focalYear) {
             focalYear.textContent = year;
+            if (typeof gsap !== 'undefined') {
+              gsap.killTweensOf([focalYear, focalPhase, focalTitle, focalDesc]);
+              gsap.timeline()
+                .fromTo(focalYear, 
+                  { opacity: 0.15, y: 14, scale: 0.92 }, 
+                  { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: 'power2.out' }
+                )
+                .fromTo([focalPhase, focalTitle, focalDesc],
+                  { opacity: 0.2, y: 8 },
+                  { opacity: 1, y: 0, duration: 0.3, stagger: 0.04, ease: 'power2.out' },
+                  '-=0.22'
+                );
+            }
           }
         }
       }
@@ -755,7 +765,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
 
-    // Allow clicking on any milestone card to scroll to it smoothly
+    // Allow clicking on any milestone card to scroll directly to it
     timelineCards.forEach((card) => {
       card.addEventListener('click', () => {
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
