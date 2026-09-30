@@ -2051,13 +2051,6 @@ img {
 }
 
 /* ==========================================================================
-   ABOUT PAGE DESIGN SYSTEM & EDITORIAL COMPONENTS
-   ========================================================================== */
-.about-hero-section {
-  padding: 5rem 0 4rem;
-  background-color: var(--c-palladian);
-  border-bottom: 1px solid var(--c-border-subtle);
-/* ==========================================================================
    ABOUT PAGE — EDITORIAL HERO & PALETTE SYSTEM
    ========================================================================== */
 .about-hero-section {
