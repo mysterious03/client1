@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products Catalogue | Dhanasree Hydraulics & Equipments</title>
+  <meta name="description" content="Explore Dhanasree Hydraulics' complete range of hydraulic cylinders, power packs, industrial presses, scissor lifts, material handling equipment, and conveyors.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flame: '#FFB162',
+            'flame-hover': '#F29E49',
+            truffle: '#A35139',
+            abyssal: '#1B2632',
+            palladian: '#EEE9DF',
+            oatmeal: '#C9C1B1',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= FLOATING PILL NAVBAR ================= -->
+  <div class="sticky top-4 z-50 px-4 w-full">
+    <header class="flex items-center justify-between px-6 py-3 md:py-4 shadow-lg max-w-5xl rounded-full mx-auto w-full bg-white/95 backdrop-blur border border-slate-200/80 transition-all">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-full bg-[#1B2632] text-[#FFB162] font-bold text-xs flex items-center justify-center tracking-wider shadow-sm">dhe</span>
+        <div class="flex flex-col">
+          <span class="font-bold text-sm tracking-tight text-[#1B2632] leading-tight">DHANASREE</span>
+          <span class="text-[9px] uppercase tracking-widest text-slate-500 font-mono">Hydraulics</span>
+        </div>
+      </a>
+
+      <nav id="menu" class="max-md:fixed max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-screen max-md:w-0 transition-all duration-300 bg-white/95 backdrop-blur flex-col md:flex-row flex gap-8 text-gray-900 text-sm font-medium z-50">
+        <a class="hover:text-[#A35139] text-gray-700 transition" href="index.html">
+          Home
+        </a>
+        <a class="hover:text-[#A35139] text-[#1B2632] font-semibold transition" href="products.html">
+          Products
+        </a>
+        <a class="hover:text-[#A35139] text-gray-700 transition" href="about.html">
+          About Us
+        </a>
+        <a class="hover:text-[#A35139] text-gray-700 transition" href="contact.html">
+          Contact
+        </a>
+        <button id="closeMenu" class="md:hidden text-gray-600 p-2 hover:bg-gray-100 rounded-full transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="tel:9840612674" title="Call Us Directly" class="size-9 flex items-center justify-center hover:bg-amber-50 hover:border-[#FFB162] transition border border-slate-300 rounded-full text-slate-700">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+        <button class="hidden md:flex bg-[#FFB162] text-[#1B2632] px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#F29E49] transition shadow-sm open-rfq-btn">
+          Request a Quote &rarr;
+        </button>
+        <button id="openMenu" class="md:hidden text-gray-700 p-1 hover:bg-gray-100 rounded-md transition" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="mono-tag">Engineering Catalogue</span>
+      <h1 class="page-hero-title">Hydraulic & Industrial Equipment</h1>
+      <p class="page-hero-desc">
+        Engineered for precision and heavy continuous duty. Our product range spans standard hydraulic components to fully bespoke automated industrial equipment.
+      </p>
+
+      <!-- Category Filter Bar -->
+      <div class="category-filter-bar" id="category-filter-bar">
+        <button class="filter-btn active" data-filter="all">All Equipment</button>
+        <button class="filter-btn" data-filter="cylinders">Cylinders</button>
+        <button class="filter-btn" data-filter="power-packs">Power Packs</button>
+        <button class="filter-btn" data-filter="lifts">Lifts & Elevators</button>
+        <button class="filter-btn" data-filter="presses">Presses</button>
+        <button class="filter-btn" data-filter="material-handling">Material Handling</button>
+        <button class="filter-btn" data-filter="pumps">Pumps & Components</button>
+        <button class="filter-btn" data-filter="conveyors">Conveyors</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalogue Grid Section -->
+  <section style="padding: 3rem 0 5rem;">
+    <div class="container">
+      <div class="catalog-grid" id="catalog-grid">
+
+        <!-- 1. Hydraulic Cylinders -->
+        <div class="catalog-item-card" data-category="cylinders" id="cat-cylinders">
+          <div class="catalog-item-thumb">
+            <img src="assets/images/prod_cylinder.jpg" alt="Hydraulic Cylinder">
+          </div>
+          <div class="catalog-item-body">
+            <span class="mono-tag" style="color: var(--c-truffle);">Vertical 01 / Fluid Power</span>
+            <h3 class="catalog-item-title">Hydraulic Cylinders</h3>
+            <p class="catalog-item-desc">
+              Heavy-duty tie rod, telescopic, stainless steel double-acting, welded, and rear end clevis cylinders. Custom manufactured for extreme high pressures and specialized strokes.
+            </p>
+            <ul class="catalog-spec-list">
+              <li class="catalog-spec-item"><span>Configuration:</span> <strong>Single / Double Acting</strong></li>
+              <li class="catalog-spec-item"><span>Material:</span> <strong>Chrome Plated Alloy / SS</strong></li>
+              <li class="catalog-spec-item"><span>Application:</span> <strong>Lifting, Pressing, Automotive</strong></li>
+            </ul>
+            <button class="btn btn-outline open-rfq-btn" style="margin-top: 1rem;" data-prefill="cylinders">
+              Request Spec Sheet &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Hydraulic Power Packs -->
+        <div class="catalog-item-card" data-category="power-packs" id="cat-power-packs">
+          <div class="catalog-item-thumb">
+            <img src="assets/images/prod_power_pack.jpg" alt="Hydraulic Power Pack Unit">
+          </div>
+          <div class="catalog-item-body">
+            <span class="mono-tag" style="color: var(--c-truffle);">Vertical 02 / Fluid Power</span>
+            <h3 class="catalog-item-title">Hydraulic Power Packs</h3>
+            <p class="catalog-item-desc">
+              Mini, compact, high-pressure, SPM dedicated, and diesel-driven hydraulic power units. Complete integrated systems including reservoir, manifold block, and filtration.
+            </p>
+            <ul class="catalog-spec-list">
+              <li class="catalog-spec-item"><span>Pressure Rating:</span> <strong>Up to 350+ Bar</strong></li>
+              <li class="catalog-spec-item"><span>Drive Type:</span> <strong>Electric Motor / Diesel</strong></li>
+              <li class="catalog-spec-item"><span>Tank Capacity:</span> <strong>Custom Scaled (5L to 1000L+)</strong></li>
+            </ul>
+            <button class="btn btn-outline open-rfq-btn" style="margin-top: 1rem;" data-prefill="power-packs">
+              Request Spec Sheet &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. Hydraulic Lifts & Scissor Lifts -->
+        <div class="catalog-item-card" data-category="lifts" id="cat-lifts">
+          <div class="catalog-item-thumb">
+            <img src="assets/images/prod_lifts.jpg" alt="Industrial Hydraulic Scissor Lift">
+          </div>
+          <div class="catalog-item-body">
+            <span class="mono-tag" style="color: var(--c-truffle);">Vertical 03 / Elevation</span>
+            <h3 class="catalog-item-title">Hydraulic Scissor & Goods Lifts</h3>
+            <p class="catalog-item-desc">
+              Manual and mobile scissor lifts, heavy cargo elevators, hydraulic goods lifts, car parking & washing lifts, and specialized industrial tail lifts.
+            </p>
+            <ul class="catalog-spec-list">
+              <li class="catalog-spec-item"><span>Capacity Range:</span> <strong>500 kg to 20,000 kg</strong></li>
+              <li class="catalog-spec-item"><span>Mechanism:</span> <strong>Heavy Scissor Linkage</strong></li>
+              <li class="catalog-spec-item"><span>Safety:</span> <strong>Hose Burst Valves & Interlocks</strong></li>
+            </ul>
+            <button class="btn btn-outline open-rfq-btn" style="margin-top: 1rem;" data-prefill="lifts">
+              Request Spec Sheet &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. Hydraulic Presses -->
+        <div class="catalog-item-card" data-category="presses" id="cat-presses">
+          <div class="catalog-item-thumb">
+            <img src="assets/images/prod_press.jpg" alt="Hydraulic Workshop Press Machine">
+          </div>
+          <div class="catalog-item-body">
+            <span class="mono-tag" style="color: var(--c-truffle);">Vertical 04 / Forming</span>
+            <h3 class="catalog-item-title">Hydraulic Industrial Presses</h3>
+            <p class="catalog-item-desc">
+              Four-column, H-frame, C-frame, deep drawing, rubber moulding, powder compacting, baling, shearing, and coir press machines designed for repeatable accuracy.
+            </p>
+            <ul class="catalog-spec-list">
+              <li class="catalog-spec-item"><span>Tonnage:</span> <strong>10 Ton to 5,000 Ton</strong></li>
+              <li class="catalog-spec-item"><span>Structure:</span> <strong>Welded Steel Monolith / 4-Post</strong></li>
+              <li class="catalog-spec-item"><span>Control:</span> <strong>Manual / PLC Automated</strong></li>
+            </ul>
+            <button class="btn btn-outline open-rfq-btn" style="margin-top: 1rem;" data-prefill="presses">
+              Request Spec Sheet &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. Material Handling Equipments -->
+        <div class="catalog-item-card" data-category="material-handling" id="cat-material-handling">
+          <div class="catalog-item-thumb">
+            <img src="assets/images/prod_material_handling.jpg" alt="Industrial Material Stacker">
+          </div>
+          <div class="catalog-item-body">
+            <span class="mono-tag" style="color: var(--c-truffle);">Vertical 05 / Logistics</span>
+            <h3 class="catalog-item-title">Material Handling Equipment</h3>
+            <p class="catalog-item-desc">
+              Automatic Dock Levelers (Model A 7810 FH, 15,000 kg capacity), hydraulic electric & manual stackers, semi-electric stackers, toe jacks, and trolley jacks.
+            </p>
+            <ul class="catalog-spec-list">
+              <li class="catalog-spec-item"><span>Dock Leveler:</span> <strong>15,000 kg (Automatic)</strong></li>
+              <li class="catalog-spec-item"><span>Warranty:</span> <strong>12 Months Standard</strong></li>
+              <li class="catalog-spec-item"><span>Compliance:</span> <strong>Factory Logistics Standard</strong></li>
+            </ul>
+            <button class="btn btn-outline open-rfq-btn" style="margin-top: 1rem;" data-prefill="handling">
+              Request Spec Sheet &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. Pumps & Fluid Power Components -->
+        <div class="catalog-item-card" data-category="pumps" id="cat-pumps">
+          <div class="catalog-item-thumb">
+            <img src="assets/images/prod_pumps.jpg" alt="Hydraulic Piston Pump">
+          </div>
+          <div class="catalog-item-body">
+            <span class="mono-tag" style="color: var(--c-truffle);">Vertical 06 / Components</span>
+            <h3 class="catalog-item-title">Pumps & Hydraulic Components</h3>
+            <p class="catalog-item-desc">
+              Axial and radial piston pumps, displacement vane/gear pumps, directional control valves, multi-spiral hoses, accumulators, and educational hydraulic trainer kits.
+            </p>
+            <ul class="catalog-spec-list">
+              <li class="catalog-spec-item"><span>Pumps:</span> <strong>Fixed & Variable Displacement</strong></li>
+              <li class="catalog-spec-item"><span>Valves:</span> <strong>Solenoid & Manual Directional</strong></li>
+              <li class="catalog-spec-item"><span>Fittings:</span> <strong>High Pressure Flanges & BSP/NPT</strong></li>
+            </ul>
+            <button class="btn btn-outline open-rfq-btn" style="margin-top: 1rem;" data-prefill="components">
+              Request Spec Sheet &rarr;
+            </button>
+          </div>
+        </div>
+
+        <!-- 7. Conveyor Systems -->
+        <div class="catalog-item-card" data-category="conveyors" id="cat-conveyors">
+          <div class="catalog-item-thumb">
+            <img src="assets/images/prod_conveyors.jpg" alt="Industrial Roller Conveyor Bed">
+          </div>
+          <div class="catalog-item-body">
+            <span class="mono-tag" style="color: var(--c-truffle);">Vertical 07 / Material Flow</span>
+            <h3 class="catalog-item-title">Hydraulic & Powered Conveyors</h3>
+            <p class="catalog-item-desc">
+              Heavy-duty motorized roller conveyors, curved sortation beds, heavy slider belt conveyors, and integrated packaging handling lines for factory automation.
+            </p>
+            <ul class="catalog-spec-list">
+              <li class="catalog-spec-item"><span>Conveyor Type:</span> <strong>Powered Roller / Heavy Belt</strong></li>
+              <li class="catalog-spec-item"><span>Roller Material:</span> <strong>Zinc Plated / Stainless Steel</strong></li>
+              <li class="catalog-spec-item"><span>Integration:</span> <strong>Modular Plant Layouts</strong></li>
+            </ul>
+            <button class="btn btn-outline open-rfq-btn" style="margin-top: 1rem;" data-prefill="conveyors">
+              Request Spec Sheet &rarr;
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo">
+            <div class="brand-symbol">dhe</div>
+            <div class="brand-text">
+              <span class="brand-title">DHANASREE</span>
+              <span class="brand-sub" style="color: #9AA8B9;">Hydraulics & Equipments</span>
+            </div>
+          </div>
+          <p>Complete engineering systems and hydraulic power units manufactured to client specifications.</p>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-col">
+          <h4>Facility Location</h4>
+          <p style="color: #C1CCD8; font-size: 0.92rem;">
+            No. 489/1, Konrajkuppam, Melayanambakkam, Near Royal Club, Chennai &ndash; 600095<br>
+            Phone: +91 9840612674
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <span>&copy; 2026 Dhanasree Hydraulics & Equipments. All rights reserved.</span>
+        <span>ENGINEERING / INDUSTRY / TOGETHER</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reusable RFQ Modal -->
+  <div class="rfq-modal-overlay" id="rfq-modal">
+    <div class="rfq-modal-container">
+      <button class="modal-close-btn" id="modal-close">&times;</button>
+      <span class="mono-tag" style="color: var(--c-truffle);">Commercial & Technical Inquiry</span>
+      <h2 style="font-size: 1.8rem; margin: 0.5rem 0 1rem; color: var(--c-abyssal);">Request An Equipment Quotation</h2>
+      <form id="rfq-modal-form">
+        <div class="form-group-row">
+          <div class="form-field">
+            <label for="rfq-name">Full Name *</label>
+            <input type="text" id="rfq-name" required placeholder="Name">
+          </div>
+          <div class="form-field">
+            <label for="rfq-company">Company *</label>
+            <input type="text" id="rfq-company" required placeholder="Company">
+          </div>
+        </div>
+        <div class="form-group-row">
+          <div class="form-field">
+            <label for="rfq-phone">Contact Phone *</label>
+            <input type="tel" id="rfq-phone" required placeholder="+91">
+          </div>
+          <div class="form-field">
+            <label for="rfq-email">Email Address *</label>
+            <input type="email" id="rfq-email" required placeholder="name@company.com">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="rfq-category">Product / Category</label>
+          <select id="rfq-category">
+            <option value="cylinders">Hydraulic Cylinders</option>
+            <option value="power-packs">Hydraulic Power Packs</option>
+            <option value="presses">Hydraulic Presses</option>
+            <option value="lifts">Hydraulic Lifts</option>
+            <option value="handling">Material Handling</option>
+            <option value="conveyors">Conveyors</option>
+            <option value="components">Pumps & Components</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="rfq-specs">Technical Requirements</label>
+          <textarea id="rfq-specs" rows="3" placeholder="Load capacity, operating pressure, dimensions..."></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1rem;">
+          <button type="submit" class="btn btn-primary">Submit RFQ &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-notice" id="toast-notice">
+    <span id="toast-message">RFQ submitted successfully.</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

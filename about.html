@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Dhanasree Hydraulics & Equipments</title>
+  <meta name="description" content="Learn about Dhanasree Hydraulics & Equipments, our manufacturing capabilities in Chennai, and our mission to provide complete engineering systems and fluid power units.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flame: '#FFB162',
+            'flame-hover': '#F29E49',
+            truffle: '#A35139',
+            abyssal: '#1B2632',
+            palladian: '#EEE9DF',
+            oatmeal: '#C9C1B1',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= FLOATING PILL NAVBAR ================= -->
+  <div class="sticky top-4 z-50 px-4 w-full">
+    <header class="flex items-center justify-between px-6 py-3 md:py-4 shadow-lg max-w-5xl rounded-full mx-auto w-full bg-white/95 backdrop-blur border border-slate-200/80 transition-all">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-full bg-[#1B2632] text-[#FFB162] font-bold text-xs flex items-center justify-center tracking-wider shadow-sm">dhe</span>
+        <div class="flex flex-col">
+          <span class="font-bold text-sm tracking-tight text-[#1B2632] leading-tight">DHANASREE</span>
+          <span class="text-[9px] uppercase tracking-widest text-slate-500 font-mono">Hydraulics</span>
+        </div>
+      </a>
+
+      <nav id="menu" class="max-md:fixed max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-screen max-md:w-0 transition-all duration-300 bg-white/95 backdrop-blur flex-col md:flex-row flex gap-8 text-gray-900 text-sm font-medium z-50">
+        <a class="hover:text-[#A35139] text-gray-700 transition" href="index.html">
+          Home
+        </a>
+        <a class="hover:text-[#A35139] text-gray-700 transition" href="products.html">
+          Products
+        </a>
+        <a class="hover:text-[#A35139] text-[#1B2632] font-semibold transition" href="about.html">
+          About Us
+        </a>
+        <a class="hover:text-[#A35139] text-gray-700 transition" href="contact.html">
+          Contact
+        </a>
+        <button id="closeMenu" class="md:hidden text-gray-600 p-2 hover:bg-gray-100 rounded-full transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="tel:9840612674" title="Call Us Directly" class="size-9 flex items-center justify-center hover:bg-amber-50 hover:border-[#FFB162] transition border border-slate-300 rounded-full text-slate-700">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+        <button class="hidden md:flex bg-[#FFB162] text-[#1B2632] px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#F29E49] transition shadow-sm open-rfq-btn">
+          Request a Quote &rarr;
+        </button>
+        <button id="openMenu" class="md:hidden text-gray-700 p-1 hover:bg-gray-100 rounded-md transition" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="mono-tag">Company Profile &amp; Ethos</span>
+      <h1 class="page-hero-title">Engineering Excellence Built On Integrity</h1>
+      <p class="page-hero-desc">
+        Dhanasree Hydraulics & Equipments manufactures and supplies complete engineering systems and hydraulic power units to the complete satisfaction of our customers at Padi, Chennai.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Overview Section -->
+  <section style="padding: 5.5rem 0; background-color: var(--c-white); border-bottom: 1px solid var(--c-border-subtle);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <div>
+          <span class="mono-tag" style="color: var(--c-truffle);">Who We Are, What We Do</span>
+          <h2 class="section-title" style="margin: 0.5rem 0 1.5rem;">Industrial Engineering Grounded in Precision</h2>
+          <p style="margin-bottom: 1rem; font-size: 1.05rem;">
+            Based in Chennai, Tamil Nadu, <strong>Dhanasree Hydraulics & Equipments</strong> is an engineering powerhouse specializing in the design, fabrication, assembly, and turnkey commissioning of heavy-duty hydraulic cylinders, power packs, industrial presses, and lifting equipment.
+          </p>
+          <p style="margin-bottom: 1.5rem;">
+            Our engineering team focuses on real-world industrial durability. Every cylinder rod is machined to exact tolerances, every power pack manifold undergoes rigorous pressure-testing, and each structural weld is inspected for continuous cyclic load endurance.
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; border-top: 1px solid var(--c-border-subtle); padding-top: 1.5rem;">
+            <div>
+              <span style="font-family: var(--f-mono); font-size: 1.4rem; font-weight: 700; color: var(--c-flame);">Melayanambakkam</span>
+              <span class="mono-tag" style="display: block; margin-top: 0.25rem;">Manufacturing Plant</span>
+            </div>
+            <div>
+              <span style="font-family: var(--f-mono); font-size: 1.4rem; font-weight: 700; color: var(--c-truffle);">Padi, Chennai</span>
+              <span class="mono-tag" style="display: block; margin-top: 0.25rem;">Operations & Hub</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--c-oatmeal); box-shadow: 0 20px 45px rgba(27, 38, 50, 0.12);">
+          <img src="assets/images/capability.jpg" alt="Manufacturing Operations at Dhanasree Hydraulics">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Section (Direct Documented Content) -->
+  <section style="padding: 6rem 0; background-color: var(--c-palladian);" id="vision">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+        
+        <!-- Mission Card -->
+        <div style="background: var(--c-white); border: 1px solid var(--c-oatmeal); border-radius: 6px; padding: 3rem; display: flex; flex-direction: column; gap: 1.5rem; border-top: 4px solid var(--c-flame);">
+          <span class="mono-tag" style="color: var(--c-flame);">Who We Are, What We Do</span>
+          <h2 style="font-size: 2rem; text-transform: uppercase;">Our Mission</h2>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
+              <span>To follow the best practices as a responsible corporate and contribute in sustainable development of the society including employees.</span>
+            </li>
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
+              <span>To preserve and enhance the integrity in all our business dealings by continuous monitoring, control and interventions without any compromises and concessions.</span>
+            </li>
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
+              <span>To achieve leading position in each of our business sector by sustainable and profitable growth creating long term wealth for the shareholders.</span>
+            </li>
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
+              <span>To provide total customer satisfaction through quality products and services at competitive costs.</span>
+            </li>
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-flame); font-weight: bold;">&bull;</span>
+              <span>To make continuous up gradation in our products through innovation anticipating the needs of our markets and customers.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Vision Card (Truffle Rust Theme) -->
+        <div style="background: var(--c-abyssal); color: var(--c-white); border-radius: 6px; padding: 3rem; display: flex; flex-direction: column; gap: 1.5rem; border-top: 4px solid var(--c-truffle);">
+          <span class="mono-tag" style="color: var(--c-flame);">What We Aspire To Be</span>
+          <h2 style="font-size: 2rem; text-transform: uppercase; color: var(--c-white);">Our Vision</h2>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; color: #C1CCD8;">
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
+              <span>To enlarge our product portfolio and production capacities in each of our businesses leveraging our domain knowledge, expertise and resources by fostering global partnerships and alliances to become leading global player with dominant market share.</span>
+            </li>
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
+              <span>To be the partner of choice for our customers by providing technology based world class products and performance enhancing services tailored to meet their requirements.</span>
+            </li>
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
+              <span>To develop bench mark innovations and technologies to suit the changing requirements of the customers &amp; the industry by continuous investments in updating our manufacturing &amp; human resources.</span>
+            </li>
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
+              <span>To provide total customer satisfaction through quality products and services at competitive costs.</span>
+            </li>
+            <li style="display: flex; gap: 0.8rem; align-items: flex-start;">
+              <span style="color: var(--c-truffle); font-weight: bold;">&bull;</span>
+              <span>To attain the leadership in technology, quality, services and costs with integrity and stability.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Clientele Section -->
+  <section class="clientele-section" style="padding: 5rem 0;">
+    <div class="container">
+      <div class="clientele-header">
+        <span class="mono-tag">Corporate &amp; Industrial Clientele</span>
+        <h2 class="section-title" style="font-size: 2.2rem; margin-top: 0.5rem;">Partnering With Leading Enterprises</h2>
+      </div>
+      <div class="clientele-logos" style="margin-top: 3rem;">
+        <span class="client-logo-item">FORD</span>
+        <span class="client-logo-item">L&amp;T CONSTRUCTION</span>
+        <span class="client-logo-item">L&amp;T GEOSTRUCTURE</span>
+        <span class="client-logo-item">TVS</span>
+        <span class="client-logo-item">SAINT-GOBAIN</span>
+        <span class="client-logo-item">APOLLO TYRES</span>
+        <span class="client-logo-item">MRF</span>
+        <span class="client-logo-item">TOSHIBA</span>
+        <span class="client-logo-item">MOTHERSON</span>
+        <span class="client-logo-item">RANE</span>
+        <span class="client-logo-item">POLYPLEX</span>
+        <span class="client-logo-item">SRF</span>
+        <span class="client-logo-item">SAVERA</span>
+        <span class="client-logo-item">VKC</span>
+        <span class="client-logo-item">KARTHIK STEEL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo">
+            <div class="brand-symbol">dhe</div>
+            <div class="brand-text">
+              <span class="brand-title">DHANASREE</span>
+              <span class="brand-sub" style="color: #9AA8B9;">Hydraulics & Equipments</span>
+            </div>
+          </div>
+          <p>Complete engineering systems and hydraulic power units manufactured to client specifications.</p>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-col">
+          <h4>Plant Location</h4>
+          <p style="color: #C1CCD8; font-size: 0.92rem;">
+            No. 489/1, Konrajkuppam, Melayanambakkam, Near Royal Club, Chennai &ndash; 600095<br>
+            Phone: +91 9840612674
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <span>&copy; 2026 Dhanasree Hydraulics & Equipments. All rights reserved.</span>
+        <span>ENGINEERING / INDUSTRY / TOGETHER</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- RFQ Modal -->
+  <div class="rfq-modal-overlay" id="rfq-modal">
+    <div class="rfq-modal-container">
+      <button class="modal-close-btn" id="modal-close">&times;</button>
+      <span class="mono-tag" style="color: var(--c-truffle);">Commercial & Technical Inquiry</span>
+      <h2 style="font-size: 1.8rem; margin: 0.5rem 0 1rem; color: var(--c-abyssal);">Request An Equipment Quotation</h2>
+      <form id="rfq-modal-form">
+        <div class="form-group-row">
+          <div class="form-field">
+            <label for="rfq-name">Full Name *</label>
+            <input type="text" id="rfq-name" required placeholder="Name">
+          </div>
+          <div class="form-field">
+            <label for="rfq-company">Company *</label>
+            <input type="text" id="rfq-company" required placeholder="Company">
+          </div>
+        </div>
+        <div class="form-group-row">
+          <div class="form-field">
+            <label for="rfq-phone">Contact Phone *</label>
+            <input type="tel" id="rfq-phone" required placeholder="+91">
+          </div>
+          <div class="form-field">
+            <label for="rfq-email">Email Address *</label>
+            <input type="email" id="rfq-email" required placeholder="name@company.com">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="rfq-category">Product / Category</label>
+          <select id="rfq-category">
+            <option value="cylinders">Hydraulic Cylinders</option>
+            <option value="power-packs">Hydraulic Power Packs</option>
+            <option value="presses">Hydraulic Presses</option>
+            <option value="lifts">Hydraulic Lifts</option>
+            <option value="handling">Material Handling</option>
+            <option value="conveyors">Conveyors</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="rfq-specs">Technical Requirements</label>
+          <textarea id="rfq-specs" rows="3" placeholder="Tonnage, operating pressure, dimensions..."></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1rem;">
+          <button type="submit" class="btn btn-primary">Submit RFQ &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast-notice" id="toast-notice">
+    <span id="toast-message">RFQ submitted successfully.</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

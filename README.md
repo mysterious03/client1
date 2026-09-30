@@ -1,82 +1,28 @@
-# Dhanasree Hydraulics & Equipments — Corporate Web Portal
+# Dhanasree Hydraulics & Equipments
 
-> MNC-grade corporate web platform for **Dhanasree Hydraulics & Equipments**, a premier B2B manufacturer and supplier of precision hydraulic cylinders, custom power packs, material handling equipment, industrial lifts, presses, and pumps based in Chennai, India.
+Official multi-page website and engineering specification portal for **Dhanasree Hydraulics & Equipments** (Chennai, India).
 
----
+## 🚀 Overview
 
-## 🏗️ Technology Stack
+- **Custom Architectural Palette**: Palladian (`#EEE9DF`), Oatmeal (`#C9C1B1`), Burning Flame (`#FFB162`), Truffle Trouble (`#A35139`), Blue Fantastic (`#2C3B4D`), and Abyssal Anchorfish Blue (`#1B2632`).
+- **Floating Pill Navbar**: Responsive PrebuiltUI pill navigation across all pages.
+- **Hero Typing Effect**: React Bits `<TextType />` engine with GSAP-powered cursor animation.
+- **Infinite Category Marquee**: Smooth infinite horizontal band scroll with hover-pause and direction toggle.
+- **Auto-Cycling Capabilities**: Interactive switcher for `LIFT`, `PRESS`, `HANDLE`, and `CONVEY` with live progress bars.
+- **Engineering Specification Lab & Calculator**: Interactive hydraulic cylinder force ($F = P \times \pi \times r^2$), tonnage, and oil volume calculator with direct RFQ pre-fill integration.
+- **Practical Utility Dossier**: Plain-language breakdown of *What is it*, *Why you need it*, and *Real-world industrial applications* across all 5 flagship product lines.
+- **Expanding Industry Showroom**: Architectural accordion displaying verified deployments across Automotive, Heavy Manufacturing, and Logistics.
+- **Verified Factuality**: Verbatim corporate Mission & Vision, plant footprint (Melayanambakkam, Chennai), and client pedigree (Ford, L&T, TVS, Saint-Gobain, Apollo Tyres, MRF).
 
-- **Frontend**: React 18 + Vite + TypeScript
-- **Routing**: React Router DOM (real multipage architecture)
-- **Styling**: Tailwind CSS (custom engineering color tokens & typography)
-- **Motion & 3D**: Framer Motion + GSAP (3D `DepthCarousel` component)
-- **Icons**: Lucide React
-- **Backend / Database**: Supabase (PostgreSQL schema in `DB.sql` with fallback local persistence)
-- **Typography**: Space Grotesk (Headings & Display) + Inter (Body & Tabular Technical Specs)
+## 📂 Pages
 
----
+1. `index.html` — Flagship Home & Engineering Lab
+2. `products.html` — Full Filterable Catalogue (Cylinders, Power Packs, Presses, Lifts, Dock Levelers, Pumps, Conveyors)
+3. `about.html` — Manufacturing Footprint, Mission, Vision, and Client Pedigree
+4. `contact.html` — Direct Plant Contact, WhatsApp RFQ, and Procurement Form
 
-## 📂 Sitemap & Routes
+## 🛠️ Tech Stack
 
-- `/` — **Home**: Asymmetric hero, mission statement strip, 3D DepthCarousel featured systems, Bento catalog entry, industries served, verified client trust wall, engineering capabilities, RFQ callouts.
-- `/products` — **Products Index**: Comprehensive catalog with search, 8 category filter tabs, and technical specification cards.
-- `/products/:categorySlug` — **Category Page**: Deep-dive into category specifications with direct RFQ form.
-- `/products/:categorySlug/:productSlug` — **Product Detail**: Full technical parameter sheets with tabular specs, model numbers, warranty, operating pressure, and quotation requests.
-- `/about` — **About Us**: Verbatim mission & vision statements, manufacturing units (Padi & Melayanambakkam, Chennai), and zero-compromise QA manifesto.
-- `/clients` — **Clients & Partners**: Verified client roster of 19 industrial leaders (Ford, Samsung, TVS, Apollo Tyres, Saint-Gobain, MRF, Toshiba, L&T, etc.) with sector categorization.
-- `/contact` — **Contact & RFQ**: Factory address, direct plant phone line, interactive Google Maps embed, and technical quotation inquiry form.
-
----
-
-## 🚀 Getting Started Locally
-
-### Prerequisites
-- Node.js (v18+)
-- npm or yarn
-
-### Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/santhoshkumarclg514-byte/dhanasree.git
-cd dhanasree
-
-# Install dependencies
-npm install
-
-# Start local development server
-npm run dev
-```
-
-Visit [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Building for Production
-
-```bash
-npm run build
-npm run preview
-```
-
----
-
-## 🗄️ Database Setup (Supabase)
-
-A ready-to-run schema script is available in [`DB.sql`](./DB.sql).
-1. Open your [Supabase Dashboard](https://supabase.com).
-2. Go to the **SQL Editor**.
-3. Paste the contents of `DB.sql` and run.
-4. Copy your project URL and anon public key into `.env`:
-   ```env
-   VITE_SUPABASE_URL=https://your-project.supabase.co
-   VITE_SUPABASE_ANON_KEY=your-anon-key
-   ```
-*(Note: If Supabase credentials are not provided, the inquiry form automatically uses local storage persistence, ensuring 100% offline uptime and zero broken states).*
-
----
-
-## 🏭 Manufacturing Facilities
-
-- **Primary Works & Corporate Office**: No.489/1, Konrajkuppam, Melayanambakkam, Near Royal Club, Chennai – 600095
-- **Secondary Works**: Padi, Chennai, Tamil Nadu
-- **Phone**: +91 98406 12674
-- **Web**: [www.dhanasreehydrauliucs.net](http://www.dhanasreehydrauliucs.net)
+- **HTML5 & Vanilla CSS**
+- **JavaScript (ES6+) & GSAP**
+- **Tailwind CSS Utility Classes**

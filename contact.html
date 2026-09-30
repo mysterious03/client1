@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Dhanasree Hydraulics & Equipments</title>
+  <meta name="description" content="Contact Dhanasree Hydraulics & Equipments in Chennai, India. Request technical quotes for hydraulic cylinders, power packs, presses, and industrial equipment.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flame: '#FFB162',
+            'flame-hover': '#F29E49',
+            truffle: '#A35139',
+            abyssal: '#1B2632',
+            palladian: '#EEE9DF',
+            oatmeal: '#C9C1B1',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================= FLOATING PILL NAVBAR ================= -->
+  <div class="sticky top-4 z-50 px-4 w-full">
+    <header class="flex items-center justify-between px-6 py-3 md:py-4 shadow-lg max-w-5xl rounded-full mx-auto w-full bg-white/95 backdrop-blur border border-slate-200/80 transition-all">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <span class="w-8 h-8 rounded-full bg-[#1B2632] text-[#FFB162] font-bold text-xs flex items-center justify-center tracking-wider shadow-sm">dhe</span>
+        <div class="flex flex-col">
+          <span class="font-bold text-sm tracking-tight text-[#1B2632] leading-tight">DHANASREE</span>
+          <span class="text-[9px] uppercase tracking-widest text-slate-500 font-mono">Hydraulics</span>
+        </div>
+      </a>
+
+      <nav id="menu" class="max-md:fixed max-md:top-0 max-md:left-0 max-md:overflow-hidden items-center justify-center max-md:h-screen max-md:w-0 transition-all duration-300 bg-white/95 backdrop-blur flex-col md:flex-row flex gap-8 text-gray-900 text-sm font-medium z-50">
+        <a class="hover:text-[#A35139] text-gray-700 transition" href="index.html">
+          Home
+        </a>
+        <a class="hover:text-[#A35139] text-gray-700 transition" href="products.html">
+          Products
+        </a>
+        <a class="hover:text-[#A35139] text-gray-700 transition" href="about.html">
+          About Us
+        </a>
+        <a class="hover:text-[#A35139] text-[#1B2632] font-semibold transition" href="contact.html">
+          Contact
+        </a>
+        <button id="closeMenu" class="md:hidden text-gray-600 p-2 hover:bg-gray-100 rounded-full transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="tel:9840612674" title="Call Us Directly" class="size-9 flex items-center justify-center hover:bg-amber-50 hover:border-[#FFB162] transition border border-slate-300 rounded-full text-slate-700">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+        <a href="#contact-page-form" class="hidden md:flex bg-[#FFB162] text-[#1B2632] px-5 py-2 rounded-full text-sm font-semibold hover:bg-[#F29E49] transition shadow-sm">
+          Send Enquiry &rarr;
+        </a>
+        <button id="openMenu" class="md:hidden text-gray-700 p-1 hover:bg-gray-100 rounded-md transition" aria-label="Open navigation menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="mono-tag">Direct Industrial Connect</span>
+      <h1 class="page-hero-title">Get In Touch With Our Engineering Team</h1>
+      <p class="page-hero-desc">
+        Discuss your custom hydraulic specifications, standard equipment requirements, or schedule a technical plant visit at our Chennai facility.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Layout: Verified Info on Left, Inquiry Form on Right -->
+  <section style="background-color: var(--c-palladian-light);">
+    <div class="container">
+      <div class="contact-layout-grid">
+        
+        <!-- Left: Verified Contact Info -->
+        <div class="contact-info-block">
+          <div>
+            <span class="mono-tag" style="color: var(--c-truffle);">Manufacturing Plant &amp; Offices</span>
+            <h2 style="font-size: 1.8rem; margin: 0.5rem 0 1rem; color: var(--c-abyssal);">Dhanasree Hydraulics &amp; Equipments</h2>
+            <p style="color: var(--c-text-secondary); line-height: 1.6;">
+              We welcome industrial clients, project consultants, and plant managers to discuss engineered solutions and inspect manufacturing capabilities in person.
+            </p>
+          </div>
+
+          <div class="contact-card-box">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="width: 40px; height: 40px; border-radius: 4px; background: var(--c-palladian); display: flex; align-items: center; justify-content: center; color: var(--c-flame); flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <strong style="font-family: var(--f-heading); font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">Works &amp; Registered Address</strong>
+                <p style="font-size: 0.92rem; color: var(--c-text-secondary);">
+                  No. 489/1, Konrajkuppam,<br>
+                  Melayanambakkam, Near Royal Club,<br>
+                  Chennai &ndash; 600095, Tamil Nadu, India
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start; border-top: 1px solid var(--c-border-subtle); padding-top: 1.25rem;">
+              <div style="width: 40px; height: 40px; border-radius: 4px; background: var(--c-palladian); display: flex; align-items: center; justify-content: center; color: var(--c-flame); flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong style="font-family: var(--f-heading); font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">Direct Phone &amp; RFQ Hotline</strong>
+                <p style="font-size: 1.1rem; font-family: var(--f-mono); font-weight: 700; color: var(--c-abyssal); margin-bottom: 0.25rem;">
+                  +91 9840612674
+                </p>
+                <span style="font-size: 0.8rem; color: var(--c-text-muted);">Mon &ndash; Sat: 9:00 AM &ndash; 7:00 PM IST</span>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: flex-start; border-top: 1px solid var(--c-border-subtle); padding-top: 1.25rem;">
+              <div style="width: 40px; height: 40px; border-radius: 4px; background: var(--c-palladian); display: flex; align-items: center; justify-content: center; color: var(--c-flame); flex-shrink: 0;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                </svg>
+              </div>
+              <div>
+                <strong style="font-family: var(--f-heading); font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">Operations &amp; Service Hub</strong>
+                <p style="font-size: 0.92rem; color: var(--c-text-secondary);">
+                  Padi Industrial Zone, Chennai, Tamil Nadu
+                </p>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+              <a href="tel:9840612674" class="btn btn-dark" style="flex: 1;">
+                Call Now
+              </a>
+              <a href="https://wa.me/919840612674?text=Hello%20Dhanasree%20Hydraulics,%20I%20have%20an%20equipment%20inquiry" target="_blank" rel="noopener" class="btn btn-primary" style="flex: 1;">
+                WhatsApp &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Commercial Enquiry Form -->
+        <div class="contact-form-box">
+          <span class="mono-tag" style="color: var(--c-truffle);">Commercial &amp; Technical Procurement</span>
+          <h2 style="font-size: 1.8rem; margin: 0.5rem 0 0.5rem; color: var(--c-abyssal);">Send An Industrial Enquiry</h2>
+          <p style="font-size: 0.92rem; color: var(--c-text-secondary); margin-bottom: 2rem;">
+            Provide your application specifications. A senior application engineer will analyze your requirements and issue a quotation.
+          </p>
+
+          <form id="contact-page-form">
+            <div class="form-group-row">
+              <div class="form-field">
+                <label for="c-name">Full Name *</label>
+                <input type="text" id="c-name" required placeholder="e.g. Anand Sundaram">
+              </div>
+              <div class="form-field">
+                <label for="c-company">Company / Organization *</label>
+                <input type="text" id="c-company" required placeholder="e.g. Apex Industrial Works">
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-field">
+                <label for="c-phone">Phone / Mobile *</label>
+                <input type="tel" id="c-phone" required placeholder="+91 98406 00000">
+              </div>
+              <div class="form-field">
+                <label for="c-email">Business Email *</label>
+                <input type="email" id="c-email" required placeholder="procurement@apex.in">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="c-category">Equipment / Product Required *</label>
+              <select id="c-category" required>
+                <option value="">Select Category</option>
+                <option value="cylinders">Hydraulic Cylinders</option>
+                <option value="power-packs">Hydraulic Power Packs</option>
+                <option value="presses">Hydraulic Presses</option>
+                <option value="lifts">Hydraulic Scissor & Goods Lifts</option>
+                <option value="handling">Material Handling (Stackers / Dock Levelers)</option>
+                <option value="conveyors">Conveyors (Roller / Belt)</option>
+                <option value="components">Pumps, Valves, Accumulators & Hoses</option>
+                <option value="custom">Complete Engineering Turnkey System</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="c-message">Technical Details &amp; Operational Requirements *</label>
+              <textarea id="c-message" rows="4" required placeholder="Describe required tonnage/load, cycle frequency, operating environment, and required delivery timeline..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">
+              Send Technical Enquiry <span>&rarr;</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div class="footer-brand-col">
+          <div class="brand-logo">
+            <div class="brand-symbol">dhe</div>
+            <div class="brand-text">
+              <span class="brand-title">DHANASREE</span>
+              <span class="brand-sub" style="color: #9AA8B9;">Hydraulics & Equipments</span>
+            </div>
+          </div>
+          <p>Complete engineering systems and hydraulic power units manufactured to client specifications.</p>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-col">
+          <h4>Plant Location</h4>
+          <p style="color: #C1CCD8; font-size: 0.92rem;">
+            No. 489/1, Konrajkuppam, Melayanambakkam, Near Royal Club, Chennai &ndash; 600095<br>
+            Phone: +91 9840612674
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <span>&copy; 2026 Dhanasree Hydraulics & Equipments. All rights reserved.</span>
+        <span>ENGINEERING / INDUSTRY / TOGETHER</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-notice" id="toast-notice">
+    <span id="toast-message">Your message has been sent.</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
