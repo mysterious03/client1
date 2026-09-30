@@ -649,4 +649,121 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 7. ABOUT PAGE: STICKY SCROLL TIMELINE CONTROLLER
+  const timelineTrack = document.getElementById('timeline-scroll-track');
+  const timelineVerticalFill = document.getElementById('timeline-vertical-fill');
+  const timelineCards = document.querySelectorAll('.story-scroll-timeline .timeline-card');
+  const focalYear = document.getElementById('focal-year');
+  const focalPhase = document.getElementById('focal-phase-badge');
+  const focalTitle = document.getElementById('focal-title');
+  const focalDesc = document.getElementById('focal-desc');
+  const focalStepCount = document.getElementById('focal-step-count');
+  const focalProgressFill = document.getElementById('focal-progress-fill');
+
+  if (timelineTrack && timelineCards.length > 0) {
+    let currentActiveIndex = -1;
+
+    function updateStickyTimeline() {
+      const viewportHeight = window.innerHeight;
+      const trackRect = timelineTrack.getBoundingClientRect();
+      const triggerLine = viewportHeight * 0.45;
+
+      // 1. Calculate Vertical Line Progress Fill
+      const totalTrackHeight = trackRect.height;
+      const scrolledPast = triggerLine - trackRect.top;
+      let linePercent = 0;
+      if (scrolledPast > 0 && totalTrackHeight > 0) {
+        linePercent = Math.min(100, Math.max(0, (scrolledPast / totalTrackHeight) * 100));
+      }
+      if (timelineVerticalFill) {
+        timelineVerticalFill.style.height = `${linePercent}%`;
+      }
+
+      // 2. Identify Active Milestone Card
+      let bestIndex = 0;
+      let minDistance = Infinity;
+
+      timelineCards.forEach((card, index) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.top + cardRect.height / 2;
+        const distance = Math.abs(cardCenter - triggerLine);
+
+        // Card that passed trigger line or is closest to triggerLine
+        if (cardRect.top <= triggerLine + 60) {
+          bestIndex = index;
+        }
+      });
+
+      if (bestIndex !== currentActiveIndex) {
+        currentActiveIndex = bestIndex;
+
+        // Update card classes
+        timelineCards.forEach((c, idx) => {
+          if (idx === currentActiveIndex) {
+            c.classList.add('active');
+          } else {
+            c.classList.remove('active');
+          }
+        });
+
+        // Update Focal Card with Smooth Micro-Animation
+        const activeCard = timelineCards[currentActiveIndex];
+        if (activeCard) {
+          const year = activeCard.getAttribute('data-year');
+          const phase = activeCard.getAttribute('data-phase');
+          const title = activeCard.getAttribute('data-title');
+          const desc = activeCard.getAttribute('data-desc');
+          const totalSteps = timelineCards.length;
+          const currentStepNum = String(currentActiveIndex + 1).padStart(2, '0');
+          const totalStepNum = String(totalSteps).padStart(2, '0');
+
+          if (focalStepCount) focalStepCount.textContent = `${currentStepNum} / ${totalStepNum}`;
+          if (focalPhase) focalPhase.textContent = phase;
+          if (focalTitle) focalTitle.innerHTML = title;
+          if (focalDesc) focalDesc.textContent = desc;
+
+          if (focalProgressFill) {
+            const stepPercent = ((currentActiveIndex + 1) / totalSteps) * 100;
+            focalProgressFill.style.width = `${stepPercent}%`;
+          }
+
+          if (focalYear && focalYear.textContent !== year) {
+            if (typeof gsap !== 'undefined') {
+              gsap.fromTo(focalYear, 
+                { opacity: 0.2, y: -10, scale: 0.95 }, 
+                { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: 'power2.out' }
+              );
+            }
+            focalYear.textContent = year;
+          }
+        }
+      }
+    }
+
+    // Attach scroll and resize listeners with requestAnimationFrame throttling
+    let isTicking = false;
+    function onScroll() {
+      if (!isTicking) {
+        requestAnimationFrame(() => {
+          updateStickyTimeline();
+          isTicking = false;
+        });
+        isTicking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    // Allow clicking on any milestone card to scroll to it smoothly
+    timelineCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    // Run initial update on page load
+    updateStickyTimeline();
+  }
+
 });

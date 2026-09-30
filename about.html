@@ -127,71 +127,133 @@
     </div>
   </section>
 
-  <!-- ================= STORY & HISTORICAL TIMELINE ================= -->
+  <!-- ================= STORY & STICKY SCROLL TIMELINE ================= -->
   <section class="about-story-section" id="story">
     <div class="container">
       <div class="about-story-grid">
         
-        <!-- Left: Editorial Narrative -->
-        <div class="about-narrative">
+        <!-- Left: Sticky Narrative & Live Milestone Stage -->
+        <div class="about-sticky-side">
           <span class="mono-tag" style="color: var(--c-truffle);">Who We Are &mdash;&mdash;</span>
           <h2 class="section-title">Built On Practical Engineering &amp; Uncompromised Precision.</h2>
-          <p>
-            Based in Chennai, Tamil Nadu, <strong>Dhanasree Hydraulics & Equipments</strong> was founded with a clear, focused mandate: to provide heavy manufacturing and infrastructure enterprises with fluid-power systems that perform reliably under punishing, continuous duty cycles.
-          </p>
-          <p>
-            Industrial hydraulics leave zero margin for error. A micro-leak in a 350-bar line, a misaligned guide bushing in a four-column press, or an uneven seal on an automotive elevator can halt an entire plant. That is why every system leaving our factory is designed with structural over-capacity, premium alloys, induction-hardened chrome plating, and precision-honed barrels.
-          </p>
-          <p>
-            Today, our dual presence in <strong>Melayanambakkam (Manufacturing Plant)</strong> and <strong>Padi (Operations &amp; Logistics Center)</strong> allows us to serve tier-1 clients across automotive, infrastructure, heavy metal forming, and intra-logistics with unparalleled speed and technical depth.
+          <p class="about-lead-text">
+            Based in Chennai, Tamil Nadu, <strong>Dhanasree Hydraulics & Equipments</strong> was founded with a clear mandate: to provide heavy manufacturing and infrastructure enterprises with fluid-power systems that perform reliably under punishing, continuous duty cycles.
           </p>
 
-          <div class="flex items-center gap-6 pt-4 border-t border-slate-200">
-            <div>
-              <span class="font-mono text-xl font-bold text-[#1B2632] block">Melayanambakkam</span>
-              <span class="mono-tag text-xs text-slate-500">Machining, Honing &amp; Test Plant</span>
+          <!-- Interactive Sticky Timeline Focal Card -->
+          <div class="sticky-focal-card" id="sticky-timeline-card">
+            <div class="focal-card-top">
+              <span class="focal-pill" id="focal-phase-badge">Phase 01 // 2012</span>
+              <span class="focal-step-count" id="focal-step-count">01 / 04</span>
             </div>
-            <div class="h-8 w-px bg-slate-300"></div>
-            <div>
-              <span class="font-mono text-xl font-bold text-[#A35139] block">Padi, Chennai</span>
-              <span class="mono-tag text-xs text-slate-500">Commercial &amp; Logistics Hub</span>
+            
+            <div class="focal-body">
+              <div class="focal-year-display" id="focal-year">2012</div>
+              <h3 class="focal-title" id="focal-title">Foundation &amp; Custom Hydraulics</h3>
+              <p class="focal-desc" id="focal-desc">
+                Established operations in Chennai specializing in bespoke hydraulic cylinder design, precision repair, and high-pressure power packs.
+              </p>
+            </div>
+
+            <div class="focal-progress-track">
+              <div class="focal-progress-fill" id="focal-progress-fill" style="width: 25%;"></div>
+            </div>
+          </div>
+
+          <div class="plant-location-pill-row">
+            <div class="plant-pill">
+              <span class="plant-pill-name">Melayanambakkam</span>
+              <span class="plant-pill-role">Machining &amp; Test Plant</span>
+            </div>
+            <div class="plant-pill">
+              <span class="plant-pill-name">Padi, Chennai</span>
+              <span class="plant-pill-role">Operations &amp; Dispatch</span>
             </div>
           </div>
         </div>
 
-        <!-- Right: Milestones Timeline -->
-        <div class="story-timeline">
-          <div class="timeline-item">
-            <span class="timeline-year">2012 &mdash; Inception</span>
-            <h3 class="timeline-heading">Foundation in Chennai</h3>
-            <p class="timeline-desc">
-              Established operations specializing in custom hydraulic cylinder engineering, fluid power repair, and high-pressure power pack design for local manufacturing plants.
-            </p>
+        <!-- Right: Scrolling Milestone Stack -->
+        <div class="story-scroll-timeline" id="timeline-scroll-track">
+          <div class="timeline-line-track">
+            <div class="timeline-line-fill" id="timeline-vertical-fill"></div>
           </div>
 
-          <div class="timeline-item">
-            <span class="timeline-year">2016 &mdash; Expansion</span>
-            <h3 class="timeline-heading">Melayanambakkam Plant Facility</h3>
-            <p class="timeline-desc">
-              Commissioned a dedicated heavy machining facility with CNC turning, deep-hole honing, submerged pump assembly bays, and hydrostatic testing testbeds.
-            </p>
+          <!-- Milestone 1 -->
+          <div class="timeline-card active" data-step="0" data-year="2012" data-phase="Phase 01 // 2012" data-title="Foundation &amp; Custom Hydraulics" data-desc="Established operations in Chennai specializing in bespoke hydraulic cylinder design, precision repair, and high-pressure power packs.">
+            <div class="timeline-node">
+              <span class="node-dot"></span>
+            </div>
+            <div class="timeline-card-inner">
+              <span class="timeline-card-year">2012 &mdash; Inception</span>
+              <h3 class="timeline-card-title">Foundation in Chennai</h3>
+              <p class="timeline-card-desc">
+                Began operations in Chennai focusing on custom fluid-power engineering, heavy hydraulic cylinder repairs, and specialized power units for local OEM manufacturing lines.
+              </p>
+              <div class="timeline-card-chips">
+                <span>Custom Cylinders</span>
+                <span>Submerged Power Units</span>
+                <span>Chennai Hub</span>
+              </div>
+            </div>
           </div>
 
-          <div class="timeline-item">
-            <span class="timeline-year">2019 &mdash; Scaling</span>
-            <h3 class="timeline-heading">5,000-Ton Press &amp; Telescopic Division</h3>
-            <p class="timeline-desc">
-              Scaled manufacturing to build monolithic four-column hydraulic presses up to 5,000 metric tons and multi-stage synchronized jacking cylinders for civil infrastructure.
-            </p>
+          <!-- Milestone 2 -->
+          <div class="timeline-card" data-step="1" data-year="2016" data-phase="Phase 02 // 2016" data-title="Melayanambakkam Plant Facility" data-desc="Commissioned dedicated CNC turning, deep-hole boring, and internal roller burnishing bays for heavy cylinder manufacturing.">
+            <div class="timeline-node">
+              <span class="node-dot"></span>
+            </div>
+            <div class="timeline-card-inner">
+              <span class="timeline-card-year">2016 &mdash; Expansion</span>
+              <h3 class="timeline-card-title">Melayanambakkam Machining Plant</h3>
+              <p class="timeline-card-desc">
+                Inaugurated our dedicated plant in Melayanambakkam, integrating CNC lathes, deep-bore honing lines, and high-pressure testbeds to build ISO H8-tolerance barrels in-house.
+              </p>
+              <div class="timeline-card-chips">
+                <span>CNC Machine Bays</span>
+                <span>Deep-Hole Honing</span>
+                <span>Automated Welding</span>
+              </div>
+            </div>
           </div>
 
-          <div class="timeline-item">
-            <span class="timeline-year">Present &amp; Beyond</span>
-            <h3 class="timeline-heading">Turnkey Automation &amp; Tier-1 Deployments</h3>
-            <p class="timeline-desc">
-              Delivering automated dock levelers, heavy scissor freight lifts, powered roller conveyors, and proportional fluid power stations trusted by Ford, L&amp;T, TVS, Saint-Gobain, and Apollo Tyres.
-            </p>
+          <!-- Milestone 3 -->
+          <div class="timeline-card" data-step="2" data-year="2019" data-phase="Phase 03 // 2019" data-title="5,000T Press &amp; Telescopic Division" data-desc="Engineered monolithic four-column hydraulic presses up to 5,000 tons and multi-stage synchronized jacking cylinders for mega infrastructure.">
+            <div class="timeline-node">
+              <span class="node-dot"></span>
+            </div>
+            <div class="timeline-card-inner">
+              <span class="timeline-card-year">2019 &mdash; Heavy Engineering</span>
+              <h3 class="timeline-card-title">5,000-Ton Press &amp; Telescopic Systems</h3>
+              <p class="timeline-card-desc">
+                Expanded engineering capabilities to design monolithic four-column hydraulic presses up to 5,000 tons and multi-stage synchronized jacking cylinders for civil infrastructure.
+              </p>
+              <div class="timeline-card-chips">
+                <span>5,000 MT Press Units</span>
+                <span>Telescopic Cylinders</span>
+                <span>Synchronized Jacking</span>
+              </div>
+            </div>
           </div>
+
+          <!-- Milestone 4 -->
+          <div class="timeline-card" data-step="3" data-year="2024+" data-phase="Phase 04 // Today" data-title="Turnkey Automation &amp; Tier-1 Trust" data-desc="Delivering 15,000 KG automated dock levelers, scissor freight lifts, and continuous PLC-integrated conveyor lines for Fortune 500 &amp; Global OEMs.">
+            <div class="timeline-node">
+              <span class="node-dot"></span>
+            </div>
+            <div class="timeline-card-inner">
+              <span class="timeline-card-year">Present &amp; Beyond &mdash; Automation</span>
+              <h3 class="timeline-card-title">Turnkey Automation &amp; Tier-1 Deployments</h3>
+              <p class="timeline-card-desc">
+                Delivering 15,000 KG automated dock levelers, scissor freight lifts, powered roller conveyors, and proportional fluid power stations trusted by Ford, L&amp;T, TVS, Saint-Gobain, and Apollo Tyres.
+              </p>
+              <div class="timeline-card-chips">
+                <span>15T Dock Levelers</span>
+                <span>Scissor Lifts</span>
+                <span>Tier-1 Partner</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
