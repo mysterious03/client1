@@ -261,268 +261,246 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2.7 FLAGSHIP 5-PRODUCT SHOWCASE & SPECIFICATION LAB
-  const featTitle = document.getElementById('feat-title');
-  const featWhat = document.getElementById('feat-what');
-  const featWhy = document.getElementById('feat-why');
-  const featUsecases = document.getElementById('feat-usecases');
-  const featImg = document.getElementById('feat-main-img');
-  const featTag = document.getElementById('feat-tag');
-  const featCounter = document.getElementById('feat-counter');
-  const featViewBtn = document.getElementById('feat-view-btn');
-  const featRfqBtn = document.getElementById('feat-rfq-btn');
-  const featPrevBtn = document.getElementById('feat-prev');
-  const featNextBtn = document.getElementById('feat-next');
-  const thumbSwitchBtns = document.querySelectorAll('.thumb-switch-btn');
-  const hotspotTop = document.querySelector('.featured-visual-stage .hotspot-top');
-  const hotspotBottom = document.querySelector('.featured-visual-stage .hotspot-bottom');
-  const hotspotRight = document.querySelector('.featured-visual-stage .hotspot-right');
+  // 2.6 CARD SWAP COMPONENT (ENGINEERING CAPABILITY)
+  const cardSwapContainer = document.getElementById('capability-card-swap');
+  if (cardSwapContainer && typeof gsap !== 'undefined') {
+    const cards = Array.from(cardSwapContainer.querySelectorAll('.capability-swap-card'));
+    const cardDistance = parseFloat(cardSwapContainer.dataset.cardDistance || '45');
+    const verticalDistance = parseFloat(cardSwapContainer.dataset.verticalDistance || '50');
+    const skewAmount = parseFloat(cardSwapContainer.dataset.skew || '5');
+    const delay = parseFloat(cardSwapContainer.dataset.delay || '4500');
 
-  const flagshipProducts = [
-    {
-      title: "Hydraulic Cylinders",
-      tag: "Flagship Vertical 01",
-      whatIsIt: "The primary linear actuator of heavy industry. It converts pressurized hydraulic fluid into immense directional mechanical force to push, pull, lift, press, or hold heavy payloads up to hundreds of tons.",
-      whyNeedIt: "Electric motors cannot generate multi-ton linear thrust in compact spaces without massive gearboxes and motor burnout. Hydraulic cylinders deliver unmatched power density, smooth speed regulation, zero slippage under load, and extreme shock resistance.",
-      useCases: [
-        "Stamping & Forging Presses",
-        "Scissor Lifts & Elevators",
-        "Automotive Assembly Jigs",
-        "Earthmoving & Crane Booms",
-        "Dam Floodgates & Steering"
-      ],
-      img: "assets/images/featured.jpg",
-      link: "products.html#cat-cylinders",
-      categoryKey: "cylinders",
-      btnText: "View Cylinders Catalogue →",
-      h1: { pin: "Hard Chrome Rod", title: "Piston Rod Finish", desc: "EN8/EN9 induction-hardened alloy with 25µm hard chrome plating. Ra < 0.2µm." },
-      h2: { pin: "Precision Honed Barrel", title: "Honed Cylinder Tube", desc: "St52 / E355 micro-honed steel barrel, ISO H8 bore tolerance, 450 Bar burst rating." },
-      h3: { pin: "Forged Clevis End", title: "Heavy Mount Clevis", desc: "Forged carbon steel pivot mounting with spherical bearing for high-shock cyclic loading." }
-    },
-    {
-      title: "Hydraulic Power Packs",
-      tag: "Flagship Vertical 02",
-      whatIsIt: "The centralized 'heart' of any hydraulic circuit. An integrated assembly comprising an oil reservoir, high-pressure pump, electric motor, fluid filtration system, and directional valve manifolds.",
-      whyNeedIt: "Industrial automation requires a steady, filtered, and pressure-regulated source of fluid power to drive multiple cylinders and hydraulic motors simultaneously without heat buildup, fluid contamination, or pressure drops.",
-      useCases: [
-        "CNC Machine Clamping Systems",
-        "Recycling Balers & Compactors",
-        "Steel Mill Roll Stands",
-        "Automated Production Lines",
-        "Heavy Marine Cranes & Winches"
-      ],
-      img: "assets/images/prod_power_pack.jpg",
-      link: "products.html#cat-power-packs",
-      categoryKey: "power-packs",
-      btnText: "View Power Packs →",
-      h1: { pin: "Submerged Pump Motor", title: "Submerged Drive", desc: "Heavy-duty electric motor with quiet submerged high-pressure piston/vane pump." },
-      h2: { pin: "Integrated Manifold", title: "CNC Manifold Block", desc: "Precision steel manifold with cartridge relief valves and multi-station solenoid control." },
-      h3: { pin: "Fluid Filtration", title: "10-Micron Filtration", desc: "High-efficiency return line filtration with visual contamination clogging gauge." }
-    },
-    {
-      title: "Hydraulic Industrial Presses",
-      tag: "Flagship Vertical 03",
-      whatIsIt: "Rigid heavy-duty machine frames (Four-Column or H-Frame) utilizing concentrated hydraulic force to shape, stamp, pierce, bend, mould, or compress metals, plastics, and composites.",
-      whyNeedIt: "Mechanical flywheel presses deliver fixed tonnage only at bottom dead center and cannot hold dwell pressure. Hydraulic presses deliver full rated tonnage throughout the entire stroke with adjustable pressing speed, pressure-hold timers, and complete overload safety.",
-      useCases: [
-        "Automotive Sheet Body Stamping",
-        "Rubber & Composite Moulding",
-        "Shaft & Bearing Straightening",
-        "Deep Drawing & Coining",
-        "Powder Metallurgy Compaction"
-      ],
-      img: "assets/images/prod_press.jpg",
-      link: "products.html#cat-presses",
-      categoryKey: "presses",
-      btnText: "View Presses Catalogue →",
-      h1: { pin: "Solid Steel Monolith", title: "Heavy Rigid Frame", desc: "Stress-relieved monolithic steel structure designed for zero bed deflection under tonnage." },
-      h2: { pin: "Forged Main Ram", title: "Cylinder Assembly", desc: "Forged alloy hydraulic ram cylinder with dual bronze guide bushings." },
-      h3: { pin: "PLC Console Control", title: "Digital Automation", desc: "Programmable stroke positioning, pressure hold timers, and safety light curtain interlocks." }
-    },
-    {
-      title: "Hydraulic Scissor & Goods Lifts",
-      tag: "Flagship Vertical 04",
-      whatIsIt: "Heavy-duty vertical elevation platforms engineered with criss-cross mechanical pantograph arms actuated by synchronized hydraulic cylinders to move freight and personnel across elevations.",
-      whyNeedIt: "Eliminates dangerous manual pallet lifting and severe ergonomic spinal injuries. Far more cost-effective and flexible than permanent civil building elevators, requiring minimal or zero pit excavation while lifting up to 20 Tons safely.",
-      useCases: [
-        "Mezzanine Floor Pallet Transfer",
-        "Automotive Assembly Line Ergonomics",
-        "Warehouse Loading Dock Transfers",
-        "Heavy Machinery Maintenance Pits",
-        "Inter-Floor Industrial Freight"
-      ],
-      img: "assets/images/prod_lifts.jpg",
-      link: "products.html#cat-lifts",
-      categoryKey: "lifts",
-      btnText: "View Scissor Lifts →",
-      h1: { pin: "Heavy Scissor Linkage", title: "Structural Scissors", desc: "High-tensile plate steel scissor arms with greasable hardened pivot bushings." },
-      h2: { pin: "Twin Lift Cylinders", title: "Synchronized Hoists", desc: "Dual hydraulic lifting cylinders equipped with velocity fuse safety valves." },
-      h3: { pin: "Safety Interlock Base", title: "Perimeter Safety", desc: "Anti-pinch safety skirt, overload relief, and mechanical maintenance prop struts." }
-    },
-    {
-      title: "Dock Levelers & Material Handling",
-      tag: "Flagship Vertical 05",
-      whatIsIt: "Hydraulic loading bay bridges that span the gap and height differential between factory loading docks and variable truck or container beds (Model A 7810 FH).",
-      whyNeedIt: "Allows forklifts, pallet trucks, and motorized hand trucks to roll directly into shipping containers without ramps. Reduces truck loading/unloading turn-around time by 75%, protects cargo from drops, and eliminates dock edge drop-off hazards.",
-      useCases: [
-        "FMCG Logistics & Cold Stores",
-        "Automotive Parts Receiving Bays",
-        "Export Container Cargo Stuffing",
-        "Heavy Machinery Dispatch Terminals",
-        "E-Commerce Distribution Centers"
-      ],
-      img: "assets/images/prod_material_handling.jpg",
-      link: "products.html#cat-material-handling",
-      categoryKey: "material-handling",
-      btnText: "View Dock Equipment →",
-      h1: { pin: "15-Ton Tear Plate", title: "Reinforced Deck", desc: "Anti-slip chequered steel platform supported by heavy longitudinal structural I-beams." },
-      h2: { pin: "Automatic Lip Cylinder", title: "Telescopic Lip Drive", desc: "Independent hydraulic lip cylinder for smooth transition onto truck cargo beds." },
-      h3: { pin: "Safety Velocity Fuse", title: "Emergency Lock", desc: "Automatic hydraulic lock prevents platform freefall if truck departs prematurely." }
-    }
-  ];
+    const config = {
+      ease: 'elastic.out(0.6, 0.9)',
+      durDrop: 1.8,
+      durMove: 1.8,
+      durReturn: 1.8,
+      promoteOverlap: 0.9,
+      returnDelay: 0.05
+    };
 
-  let currentFlagshipIndex = 0;
+    let order = Array.from({ length: cards.length }, (_, i) => i);
+    let tlRef = null;
+    let intervalId = null;
 
-  function renderFlagship(index) {
-    const item = flagshipProducts[index];
-    if (!item) return;
+    const makeSlot = (i, distX, distY, total) => ({
+      x: i * distX,
+      y: -i * distY,
+      z: -i * distX * 1.5,
+      zIndex: total - i
+    });
 
-    currentFlagshipIndex = index;
-
-    if (featCounter) featCounter.textContent = `0${index + 1} / 05`;
-    if (featTag) featTag.textContent = item.tag;
-
-    // Smooth transition
-    if (featImg) {
-      featImg.style.opacity = '0';
-      featImg.style.transform = 'scale(0.96)';
-    }
-
-    setTimeout(() => {
-      if (featTitle) featTitle.textContent = item.title;
-      if (featWhat) featWhat.textContent = item.whatIsIt;
-      if (featWhy) featWhy.textContent = item.whyNeedIt;
-      if (featUsecases && Array.isArray(item.useCases)) {
-        featUsecases.innerHTML = item.useCases.map(uc => `<span class="use-case-pill">${uc}</span>`).join('');
-      }
-      if (featImg) {
-        featImg.src = item.img;
-        featImg.style.opacity = '1';
-        featImg.style.transform = 'scale(1)';
-      }
-      if (featViewBtn) {
-        featViewBtn.href = item.link;
-        featViewBtn.innerHTML = `${item.btnText}`;
-      }
-      if (featRfqBtn && item.categoryKey) {
-        featRfqBtn.setAttribute('data-prefill', item.categoryKey);
-      }
-
-      // Update Hotspots
-      if (hotspotTop) {
-        hotspotTop.querySelector('.hotspot-pin').textContent = item.h1.pin;
-        hotspotTop.querySelector('.hotspot-popover strong').textContent = item.h1.title;
-        hotspotTop.querySelector('.hotspot-popover').childNodes[2].nodeValue = " " + item.h1.desc;
-      }
-      if (hotspotBottom) {
-        hotspotBottom.querySelector('.hotspot-pin').textContent = item.h2.pin;
-        hotspotBottom.querySelector('.hotspot-popover strong').textContent = item.h2.title;
-        hotspotBottom.querySelector('.hotspot-popover').childNodes[2].nodeValue = " " + item.h2.desc;
-      }
-      if (hotspotRight) {
-        hotspotRight.querySelector('.hotspot-pin').textContent = item.h3.pin;
-        hotspotRight.querySelector('.hotspot-popover strong').textContent = item.h3.title;
-        hotspotRight.querySelector('.hotspot-popover').childNodes[2].nodeValue = " " + item.h3.desc;
-      }
-
-      // Update button highlights
-      thumbSwitchBtns.forEach((btn, bIdx) => {
-        btn.classList.toggle('active', bIdx === index);
+    const placeNow = (el, slot, skew) =>
+      gsap.set(el, {
+        x: slot.x,
+        y: slot.y,
+        z: slot.z,
+        xPercent: -50,
+        yPercent: -50,
+        skewY: skew,
+        transformOrigin: 'center center',
+        zIndex: slot.zIndex,
+        force3D: true
       });
-    }, 180);
-  }
 
-  if (featPrevBtn) {
-    featPrevBtn.addEventListener('click', () => {
-      const newIdx = (currentFlagshipIndex - 1 + flagshipProducts.length) % flagshipProducts.length;
-      renderFlagship(newIdx);
+    // Initial 3D placement of cards
+    const total = cards.length;
+    cards.forEach((card, i) => placeNow(card, makeSlot(i, cardDistance, verticalDistance, total), skewAmount));
+
+    const swap = () => {
+      if (order.length < 2) return;
+
+      const [front, ...rest] = order;
+      const elFront = cards[front];
+      const tl = gsap.timeline();
+      tlRef = tl;
+
+      tl.to(elFront, {
+        y: '+=480',
+        duration: config.durDrop,
+        ease: config.ease
+      });
+
+      tl.addLabel('promote', `-=${config.durDrop * config.promoteOverlap}`);
+      rest.forEach((idx, i) => {
+        const el = cards[idx];
+        const slot = makeSlot(i, cardDistance, verticalDistance, cards.length);
+        tl.set(el, { zIndex: slot.zIndex }, 'promote');
+        tl.to(
+          el,
+          {
+            x: slot.x,
+            y: slot.y,
+            z: slot.z,
+            duration: config.durMove,
+            ease: config.ease
+          },
+          `promote+=${i * 0.12}`
+        );
+      });
+
+      const backSlot = makeSlot(cards.length - 1, cardDistance, verticalDistance, cards.length);
+      tl.addLabel('return', `promote+=${config.durMove * config.returnDelay}`);
+      tl.call(
+        () => {
+          gsap.set(elFront, { zIndex: backSlot.zIndex });
+        },
+        undefined,
+        'return'
+      );
+      tl.to(
+        elFront,
+        {
+          x: backSlot.x,
+          y: backSlot.y,
+          z: backSlot.z,
+          duration: config.durReturn,
+          ease: config.ease
+        },
+        'return'
+      );
+
+      tl.call(() => {
+        order = [...rest, front];
+      });
+    };
+
+    // Auto-swap interval
+    intervalId = setInterval(swap, delay);
+
+    // Pause on hover
+    cardSwapContainer.addEventListener('mouseenter', () => {
+      if (tlRef) tlRef.pause();
+      clearInterval(intervalId);
+    });
+
+    cardSwapContainer.addEventListener('mouseleave', () => {
+      if (tlRef) tlRef.play();
+      intervalId = setInterval(swap, delay);
+    });
+
+    // Swap on card click
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        swap();
+      });
     });
   }
 
-  if (featNextBtn) {
-    featNextBtn.addEventListener('click', () => {
-      const newIdx = (currentFlagshipIndex + 1) % flagshipProducts.length;
-      renderFlagship(newIdx);
+  // 2.7 FLOWING MENU COMPONENT (OUR PROCESS)
+  const flowingMenuContainer = document.getElementById('process-flowing-menu');
+  if (flowingMenuContainer && typeof gsap !== 'undefined') {
+    const menuItems = flowingMenuContainer.querySelectorAll('.menu__item');
+    const animationDefaults = { duration: 0.6, ease: 'expo.out' };
+
+    const distMetric = (x, y, x2, y2) => {
+      const xDiff = x - x2;
+      const yDiff = y - y2;
+      return xDiff * xDiff + yDiff * yDiff;
+    };
+
+    const findClosestEdge = (mouseX, mouseY, width, height) => {
+      const topEdgeDist = distMetric(mouseX, mouseY, width / 2, 0);
+      const bottomEdgeDist = distMetric(mouseX, mouseY, width / 2, height);
+      return topEdgeDist < bottomEdgeDist ? 'top' : 'bottom';
+    };
+
+    menuItems.forEach(item => {
+      const marquee = item.querySelector('.marquee');
+      const marqueeInner = item.querySelector('.marquee__inner');
+      const speed = parseFloat(item.dataset.speed || '15');
+
+      if (!marquee || !marqueeInner) return;
+
+      // Animate marquee continuously for seamless infinite loop
+      const setupMarquee = () => {
+        const firstPart = marqueeInner.querySelector('.marquee__part');
+        if (!firstPart) return;
+        const partWidth = firstPart.offsetWidth;
+        if (partWidth === 0) return;
+
+        gsap.to(marqueeInner, {
+          x: -partWidth,
+          duration: speed,
+          ease: 'none',
+          repeat: -1
+        });
+      };
+
+      setTimeout(setupMarquee, 100);
+
+      // Direction-aware hover effect using GSAP
+      item.addEventListener('mouseenter', ev => {
+        const rect = item.getBoundingClientRect();
+        const x = ev.clientX - rect.left;
+        const y = ev.clientY - rect.top;
+        const edge = findClosestEdge(x, y, rect.width, rect.height);
+
+        gsap.timeline({ defaults: animationDefaults })
+          .set(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
+          .set(marqueeInner, { y: edge === 'top' ? '101%' : '-101%' }, 0)
+          .to([marquee, marqueeInner], { y: '0%' }, 0);
+      });
+
+      item.addEventListener('mouseleave', ev => {
+        const rect = item.getBoundingClientRect();
+        const x = ev.clientX - rect.left;
+        const y = ev.clientY - rect.top;
+        const edge = findClosestEdge(x, y, rect.width, rect.height);
+
+        gsap.timeline({ defaults: animationDefaults })
+          .to(marquee, { y: edge === 'top' ? '-101%' : '101%' }, 0)
+          .to(marqueeInner, { y: edge === 'top' ? '101%' : '-101%' }, 0);
+      });
     });
   }
 
-  thumbSwitchBtns.forEach((btn, idx) => {
-    btn.addEventListener('click', () => {
-      renderFlagship(idx);
+  // 2.8 ACCORDION GALLERY (INDUSTRIES WE SUPPORT)
+  // Configurable parameters: defaultIndex = 2, expandRatio = 0.52, trigger = 'hover'
+  const accordionGallery = document.getElementById('industry-showroom');
+  if (accordionGallery) {
+    const panels = Array.from(accordionGallery.querySelectorAll('.industry-panel'));
+    const defaultIndex = parseInt(accordionGallery.dataset.defaultIndex || '2', 10);
+    const trigger = accordionGallery.dataset.trigger || 'hover';
+    let leaveTimer = null;
+
+    function setActivePanel(index) {
+      if (index < 0 || index >= panels.length) return;
+      panels.forEach((panel, idx) => {
+        const isActive = idx === index;
+        panel.classList.toggle('active', isActive);
+        panel.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+      });
+    }
+
+    panels.forEach((panel, idx) => {
+      if (trigger === 'hover') {
+        panel.addEventListener('mouseenter', () => {
+          if (leaveTimer) {
+            clearTimeout(leaveTimer);
+            leaveTimer = null;
+          }
+          setActivePanel(idx);
+        });
+      }
+
+      panel.addEventListener('click', () => {
+        setActivePanel(idx);
+      });
+
+      panel.addEventListener('focus', () => {
+        setActivePanel(idx);
+      });
     });
-  });
 
-  // 2.8 INTERACTIVE HYDRAULIC TONNAGE & FORCE CALCULATOR
-  const inputBore = document.getElementById('input-bore');
-  const inputPressure = document.getElementById('input-pressure');
-  const inputStroke = document.getElementById('input-stroke');
-
-  const valBore = document.getElementById('val-bore');
-  const valPressure = document.getElementById('val-pressure');
-  const valStroke = document.getElementById('val-stroke');
-
-  const outForce = document.getElementById('calc-force-out');
-  const outVolume = document.getElementById('calc-volume-out');
-  const outKn = document.getElementById('calc-kn-out');
-  const calcQuoteBtn = document.getElementById('calc-quote-btn');
-
-  function calculateHydraulics() {
-    if (!inputBore || !inputPressure || !inputStroke) return;
-
-    const bore = parseFloat(inputBore.value); // mm
-    const pressure = parseFloat(inputPressure.value); // bar
-    const stroke = parseFloat(inputStroke.value); // mm
-
-    if (valBore) valBore.textContent = `${bore} mm`;
-    if (valPressure) valPressure.textContent = `${pressure} Bar`;
-    if (valStroke) valStroke.textContent = `${stroke} mm`;
-
-    // Area in mm² = π * (D / 2)²
-    const areaMm2 = Math.PI * Math.pow(bore / 2, 2);
-
-    // Force in Newtons: 1 Bar = 0.1 N/mm² -> Force = Area * (Pressure * 0.1)
-    const forceNewtons = areaMm2 * (pressure * 0.1);
-
-    // Metric Tons: 1 Metric Ton = 9,806.65 N
-    const forceTons = forceNewtons / 9806.65;
-
-    // kN: Force in kN
-    const forceKn = forceNewtons / 1000;
-
-    // Volume in Litres: (Area in mm² * Stroke in mm) / 1,000,000
-    const volumeLitres = (areaMm2 * stroke) / 1000000;
-
-    if (outForce) outForce.textContent = `${forceTons.toFixed(1)} MT`;
-    if (outVolume) outVolume.textContent = `${volumeLitres.toFixed(1)} L`;
-    if (outKn) outKn.textContent = `${forceKn.toFixed(1)} kN`;
-  }
-
-  if (inputBore && inputPressure && inputStroke) {
-    [inputBore, inputPressure, inputStroke].forEach(input => {
-      input.addEventListener('input', calculateHydraulics);
+    accordionGallery.addEventListener('mouseleave', () => {
+      leaveTimer = setTimeout(() => {
+        setActivePanel(defaultIndex);
+      }, 400);
     });
-    calculateHydraulics(); // initial calculation
-  }
 
-  if (calcQuoteBtn) {
-    calcQuoteBtn.addEventListener('click', () => {
-      const bore = inputBore.value;
-      const pressure = inputPressure.value;
-      const stroke = inputStroke.value;
-      const tons = outForce ? outForce.textContent : '';
-      const specs = `Sized Cylinder Inquiry: Bore ${bore}mm, Stroke ${stroke}mm, Working Pressure ${pressure} Bar (Calculated Thrust: ${tons})`;
-      openModal('cylinders', specs);
-    });
+    // Initialize with defaultIndex (item 2: Warehousing & Logistics)
+    setActivePanel(defaultIndex);
   }
 
   // 3. INTERACTIVE RFQ MODAL
